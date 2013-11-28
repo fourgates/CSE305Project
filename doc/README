@@ -1,0 +1,8 @@
+CSE 305 Project
+
+src -> main -> webapp -> WEB-INF ->spring = Spring config
+src -> main -> webapp -> WEB-INF ->views = JSP files - View
+src -> main -> resources = logger
+src -> main -> java -> com.teamusa.app = Mapping and parsing parameters configuration
+src -> main -> java -> com.teamusa.controller - Java classes to manipulate mySQL server - Controllers 
+src -> main -> java -> com.teamusa.JDBC = Configuration of SQL server and project - Model
