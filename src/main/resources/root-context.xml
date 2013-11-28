@@ -10,9 +10,8 @@
 	</bean>
 
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://sbcstldb.cs.stonybrook.edu:3306/pninan" />
+		<property name="url" value="jdbc:mysql://mysql2.cs.stonybrook.edu:3306/pninan" />
 		<property name="username" value="pninan" />
 		<property name="password" value="106977622" />
 	</bean>

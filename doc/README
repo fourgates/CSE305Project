@@ -3,6 +3,32 @@ CSE 305 Project
 src -> main -> webapp -> WEB-INF ->spring = Spring config
 src -> main -> webapp -> WEB-INF ->views = JSP files - View
 src -> main -> resources = logger
-src -> main -> java -> com.teamusa.app = Mapping and parsing parameters configuration
-src -> main -> java -> com.teamusa.controller - Java classes to manipulate mySQL server - Controllers 
-src -> main -> java -> com.teamusa.JDBC = Configuration of SQL server and project - Model
+src -> main -> resources -> root-context.xml = configuration of java beans and mapping
+src -> main -> java -> com.teamusa.app -> App.java = testing application 
+src -> main -> java -> com.teamusa.controller -> HomeController.java = Mapping controller - Controllers 
+src -> main -> java -> com.teamusa.dao -> CustomerDAO.java = interface for the JDBC class
+src -> main -> java -> com.teamusa.dao.impl -> JdbcCustomerDAO.java = Configuration of SQL server and project - Model
+
+NEED TO DO:
+Max:
+add all tables to your mySQL database were given, here is a link to access your DB: 
+http://www.cs.sunysb.edu/facilities/windowslab/services/mysql.html
+
+I REALLY need the proper database to efficeiently write the java code implementation 
+
+Jian:
+I plan on being able to convert these POJO's (plain old java objects) to JSON so it can easily be used in javascript
+Please take a look at extJS ive used it several times. here is a very useful link: 
+http://docs.sencha.com/extjs/4.2.2/extjs-build/examples/build/KitchenSink/ext-theme-neptune/#basic-panels
+
+So ie i can export fake posts to JSON to make a news feed
+or export a page object to json and be able to populate a page template 
+
+Here is DB im using:
+CREATE TABLE `customer` (
+  `CUST_ID` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `NAME` VARCHAR(100) NOT NULL,
+  `AGE` INT(10) UNSIGNED NOT NULL,
+  PRIMARY KEY (`CUST_ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+
