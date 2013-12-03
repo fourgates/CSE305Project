@@ -1,0 +1,71 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <script language="javascript" type="text/javascript">
+            
+                function Button_onclick() {
+                    if(document.newForm.Radio1.checked){
+                            window.open("userRegistration.html","_self");
+                            document.newForm.Radio2.checked = false;
+                            document.newForm.Radio3.checked = false;
+                    }
+                    else if (document.newForm.Radio2.checked){
+                            window.open("employeeRegistration.html","_self");
+                            document.newForm.Radio1.checked = false;
+                            document.newForm.Radio3.checked = false;
+                    }
+                    else{
+                            window.open("managerRegistration.html","_self");
+                            document.newForm.Radio1.checked = false;
+                            document.newForm.Radio2.checked = false;
+                    }
+
+                }
+
+        </script>
+        <style>
+            #outer{
+                width: 1000px;
+                height: 600px;
+                background: buttonface;
+                margin: 0 auto;
+                display: block;
+            }
+            #inner{
+                background: buttonface;
+                margin: 50px 50px 50px 300px;
+                padding: 0;
+                display: block;
+            }
+        </style>
+    </head>
+    <body style ="text-align: justify" bgcolor ="white">
+
+        <div id="header" style="background-color: dodgerblue;">
+            <h1 style ="color: white; margin-bottom: 0; font-size: 30; height: 200">Facebook+</h1>
+
+        </div>
+        <div id ="outer">
+        <div  id="inner">
+            <span>
+                <span style="font-size: 30pt; font-family: Arial"> Sign Up For Facebook+</span> <br>
+                <span style="font-size: 16pt; font-family: Arial"><em>Sign Up as User, Employee, or Manager</em></span> <br>
+            </span>
+        
+            <form name ="newForm">
+                <input id="Radio1"   type="radio" value="User"> User<br>
+                <input id="Radio2"   type="radio" value="Employee"> Employee<br>
+                <input id="Radio3"   type="radio" value="Manager"> Manager<br> 
+                <button type ="button" onclick="return Button_onclick()"> Next </button>
+                <button type="button" onclick="javascript:history.back()"> Cancel </button>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>
