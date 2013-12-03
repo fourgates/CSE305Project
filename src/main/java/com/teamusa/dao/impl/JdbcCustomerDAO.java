@@ -116,4 +116,8 @@ public class JdbcCustomerDAO implements CustomerDAO
 			}
 		}
 	}
+	
+	public String hi() {
+		return "hi max";
+	}
 }
