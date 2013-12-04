@@ -4,6 +4,11 @@ public class AddedTo {
 	
 	private int userID;
 	private int circleID;
+	
+	public AddedTo(int userID, int circleID) {
+		this.userID = userID;
+		this.circleID = circleID;
+	}
 	/**
 	 * @return the userID
 	 */

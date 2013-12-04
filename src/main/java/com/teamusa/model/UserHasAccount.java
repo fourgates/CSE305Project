@@ -4,6 +4,11 @@ public class UserHasAccount {
 	
 	private int userID;
 	private int accountNumber;
+	
+	public UserHasAccount(int userID, int accountNumber) {
+		this.userID = userID;
+		this.accountNumber = accountNumber;
+	}
 	/**
 	 * @return the userID
 	 */

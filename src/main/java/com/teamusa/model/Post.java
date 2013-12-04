@@ -1,6 +1,6 @@
 package com.teamusa.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Post {
 	
@@ -11,6 +11,15 @@ public class Post {
 	private int commentCount;
 	private int circle;
 	private int author;
+	
+	public Post(int postID, Date date, String content, int commentCount, int circle, int author) {
+		this.postID = postID;
+		this.date = date;
+		this.content = content;
+		this.commentCount = commentCount;
+		this.circle = circle;
+		this.author = author;
+	}
 	/**
 	 * @return the postID
 	 */

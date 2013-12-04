@@ -1,6 +1,6 @@
 package com.teamusa.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Manager {
 	
@@ -8,6 +8,12 @@ public class Manager {
 	// may need to be java.sql.Timestamp
 	private Date startDate;
 	private int hourlyRate;
+	
+	public Manager(int SSN, Date startDate, int hourlyRate) {
+		this.SSN = SSN;
+		this.startDate = startDate;
+		this.hourlyRate = hourlyRate;
+	}
 	/**
 	 * @return the sSN
 	 */

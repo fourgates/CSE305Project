@@ -1,6 +1,6 @@
 package com.teamusa.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Message {
 	
@@ -11,6 +11,15 @@ public class Message {
 	private String content;
 	private int sender;
 	private int receiver;
+	
+	public Message(int messageID, Date date, String subject, String content, int sender, int receiver) {
+		this.messageID = messageID;
+		this.date = date;
+		this.subject = subject;
+		this.content = content;
+		this.sender = sender;
+		this.receiver = receiver;
+	}
 	/**
 	 * @return the messageID
 	 */

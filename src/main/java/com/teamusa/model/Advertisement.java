@@ -1,6 +1,6 @@
 package com.teamusa.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Advertisement {
 	
@@ -15,6 +15,19 @@ public class Advertisement {
 	private int unitPrice;
 	// WARNING: misspelled in DB as 'Availabe_Units'
 	private int availableUnits;
+	
+	public Advertisement(int advertisementID, int employee, String type, Date date, String company, String itemName,
+			String content, int unitPrice, int availableUnits) {
+		this.advertisementID = advertisementID;
+		this.employee = employee;
+		this.type = type;
+		this.date = date;
+		this.company = company;
+		this.itemName = itemName;
+		this.content = content;
+		this.unitPrice = unitPrice;
+		this.availableUnits = availableUnits;
+	}
 	/**
 	 * @return the advertisementID
 	 */

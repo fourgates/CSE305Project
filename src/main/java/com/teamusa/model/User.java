@@ -1,6 +1,6 @@
 package com.teamusa.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class User {
 	
@@ -9,6 +9,13 @@ public class User {
 	// This might have to be java.sql.Timestamp
 	private Date accountCreationDate;
 	private int rating;
+	
+	public User(int SSN, int userID, Date accountCreationDate, int rating) {
+		this.SSN = SSN;
+		this.userID = userID;
+		this.accountCreationDate = accountCreationDate;
+		this.rating = rating;
+	}
 	/**
 	 * @return the ssn
 	 */

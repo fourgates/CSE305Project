@@ -4,6 +4,11 @@ public class UserLikesComment {
 	
 	private int user;
 	private int comment;
+	
+	public UserLikesComment(int user, int comment) {
+		this.user = user;
+		this.comment = comment;
+	}
 	/**
 	 * @return the user
 	 */

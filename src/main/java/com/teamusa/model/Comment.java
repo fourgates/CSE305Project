@@ -1,6 +1,6 @@
 package com.teamusa.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Comment {
 	
@@ -10,6 +10,14 @@ public class Comment {
 	private String content;
 	private int post;
 	private int author;
+	
+	public Comment(int commentID, Date date, String content, int post, int author) {
+		this.commentID = commentID;
+		this.date = date;
+		this.content = content;
+		this.post = post;
+		this.author = author;
+	}
 	/**
 	 * @return the commentID
 	 */

@@ -1,6 +1,6 @@
 package com.teamusa.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Employee {
 	
@@ -9,6 +9,13 @@ public class Employee {
 	private Date startDate;
 	private int hourlyRate;
 	private int manager;
+	
+	public Employee(int SSN, Date startDate, int hourlyRate, int manager) {
+		this.SSN = SSN;
+		this.startDate = startDate;
+		this.hourlyRate = hourlyRate;
+		this.manager = manager;
+	}
 	/**
 	 * @return the sSN
 	 */

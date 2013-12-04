@@ -1,6 +1,6 @@
 package com.teamusa.model;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class Purchase {
 	
@@ -11,6 +11,15 @@ public class Purchase {
 	private int numberOfUnits;
 	private int account;
 	private int user;
+	
+	public Purchase(int transactionID, Date date, int advertisement, int numberOfUnits, int account, int user) {
+		this.transactionID = transactionID;
+		this.date = date;
+		this.advertisement = advertisement;
+		this.numberOfUnits = numberOfUnits;
+		this.account = account;
+		this.user = user;
+	}
 	/**
 	 * @return the transactionID
 	 */
