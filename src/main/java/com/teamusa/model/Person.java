@@ -9,15 +9,28 @@ package com.teamusa.model;
  */
 public class Person 
 {
-	int SSN;
-	String lastName;
-	String firstName;
-	String address;
-	String city;
-	String state;
-	int zipcode;
-	int telephoneNumber;
-	String emailAddress;
+	private int SSN;
+	private String lastName;
+	private String firstName;
+	private String address;
+	private String city;
+	private String state;
+	private int zipcode;
+	private int telephoneNumber;
+	private String emailAddress;
+	
+	public Person(int SSN, String lastName, String firstName, String address, String city, String state,
+			int zipcode, int telephoneNumber, String emailAddress) {
+		this.SSN = SSN;
+		this.lastName = lastName;
+		this.firstName = firstName;
+		this.address = address;
+		this.city = city;
+		this.state = state;
+		this.zipcode = zipcode;
+		this.telephoneNumber = telephoneNumber;
+		this.emailAddress = emailAddress;
+	}
 	
 	/**
 	 * @return the sSN

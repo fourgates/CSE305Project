@@ -9,10 +9,17 @@ package com.teamusa.model;
  */
 public class Circle 
 {
-	int circleID;
-	String circleName;
-	int ownerOfCircle;
-	String type;
+	private int circleID;
+	private String circleName;
+	private int ownerOfCircle;
+	private String type;
+	
+	public Circle(int circleID, String circleName, int ownerOfCircle, String type) {
+		this.circleID = circleID;
+		this.circleName = circleName;
+		this.ownerOfCircle = ownerOfCircle;
+		this.type = type;
+	}
 	/**
 	 * @return the circleID
 	 */

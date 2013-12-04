@@ -11,25 +11,20 @@ import java.sql.Date;
  */
 public class Account 
 {
-	int accountNumber;
-	Date accountCreationDate;
-	int creditCardNumber;
-	String status;
-	public Account()
-	{
-		accountNumber = 0;
-		accountCreationDate = new Date(accountNumber);
-		creditCardNumber = 0;
-		status = "";
-		
+	
+	private int accountNumber;
+	// may need to be java.sql.Timestamp
+	private Date accountCreationDate;
+	private int creditCardNumber;
+	private String status;
+	
+	public Account(int accountNumber, Date accountCreationDate, int creditCardNumber, String status) {
+		this.accountNumber = accountNumber;
+		this.accountCreationDate = accountCreationDate;
+		this.creditCardNumber = creditCardNumber;
+		this.status = status;
 	}
-	public Account(int aNum, Date date, int ccNum,String stat)
-	{
-		accountNumber = aNum;
-		accountCreationDate = date;
-		creditCardNumber = ccNum;
-		status = stat;
-	}
+	
 	/**
 	 * @return the accountNumber
 	 */
