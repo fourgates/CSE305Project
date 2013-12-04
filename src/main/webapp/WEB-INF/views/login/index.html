@@ -1,0 +1,51 @@
+<!--
+To change this template, choose Tools | Templatesand open the template in the editor.
+--><!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>Facebook Plus</title>
+	<script language="javascript" type="text/javascript">
+		function Button2_onclick(){
+			window.open("registerPage.html", "_self");
+		}
+	</script>
+         <style>
+            body{background-color: cornflowerblue}
+            h1{color: white; text-align: center; font-family: "Times New Roman";
+               font-size: 50px;}
+            h2{color: white; text-align: center; font-family: "Times New Roman";
+               font-size: 25px;}
+            p{font-family: sans-serif;}
+           
+        </style>
+  </head>
+  <body style="text-align: center">
+    <h1>Facebook +</h1>
+    <h2>Sign into Facebook+</h2>
+
+    <form name="myForm" action="login.jsp" method="post">
+        <table align ="center">
+            <tbody>
+                <tr>
+                    <td>Username:</td><td><input name="username" placeholder="username" type="text"></td>
+                </tr>
+                <tr>
+                    <td>Password:</td><td><input name="password" placeholder="password" type="password"></td>
+                </tr>
+                <tr>
+                    <td><button type="button"> Login</button> </td>
+                    <td><button type="button" onclick="return Button2_onclick()"> Register</button></td>
+                </tr>
+            </tbody>
+        </table>
+       
+ 
+    </form>
+    
+    <span style="font-size: 9px; color: gold;"> <br>
+      Team USA<br>
+      Computer Science Department <br>
+      Stony Brook University </span>
+  </body>
+</html>

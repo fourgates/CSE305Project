@@ -1,0 +1,69 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #header {
+                background-color: dodgerblue;
+            }
+            #header ul {
+                list-style-type: none;
+                margin:0;
+                padding:0;
+            }
+            #header ul a {
+                color: white;
+            }
+            #header ul a:hover {
+                color: yellow;
+            }
+            #header li{
+                display: inline;
+            }
+            #menu ul {
+                list-style-type: none;
+                margin:0;
+                padding:0;
+            }
+        </style>
+    </head>
+    <body>
+        
+       <div id="container">
+            <div id="header" style="">
+                <div>
+                    <h1 style ="color: white; margin-bottom: 0;">FB+</h1>
+                </div>
+                <div>
+                    <ul>
+                        <li><a href="#Home">Home</a></li>
+                        <li><a href="#Logout">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div id ="menu" style="background-color: lightblue ; height: 400px;width: 200px; float: left;">
+                <ul>
+                    <li><a href="circle.html">Circle</a></li>
+                    <li><a href="post.html">Post</a></li>
+                    <li><a href="message.html">Message</a></li>
+                    
+                </ul>
+            </div>
+            <div id ="content" style="background-color: white; height: 200px; width: 400px;float: left">
+                <form>
+                    <div>
+                        Add Post<br>
+                        <textarea rows="6" cols="55"></textarea>
+
+                        <input type ="submit" value ="Post">
+                    </div>
+                </form>
+            </div>
+            
+        </div>
+    </body>
+</html>

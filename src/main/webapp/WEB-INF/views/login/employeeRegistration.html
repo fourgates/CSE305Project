@@ -1,0 +1,90 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            #header {
+                width: 100%;
+                height: 50px;
+                background-color: dodgerblue;
+            }
+            #outer{
+                width: 1000px;
+                height: 600px;
+                background: buttonface;
+                margin: 0 auto;
+                display: block;
+            }
+            #inner{
+                background: buttonface;
+                margin: 50px 50px 50px 300px;
+                padding: 0;
+                display: block;
+            }
+        </style>
+    </head>
+    <body style="text-align: left" bgcolor="white">
+    <div id="header" style="background-color: dodgerblue;">
+      <h1 style="color: white; margin-bottom: 0; font-size: 30; height: 200">Facebook+</h1>
+    </div>
+    <div id="outer">
+      <div id="inner" style="font-size: 15px"> <span> <span style="font-size: 30pt; font-family: Arial">
+            Sign Up For Facebook+</span> <br>
+          <span style="font-size: 16pt; font-family: Arial"><em>Sign Up as Employee</em></span>
+          <br>
+        </span>
+        <form name="newForm" action="newUser.jsp" method="post"> 
+          <table>
+                        <tbody>
+                            <tr>
+                                <td>SSN:</td><td><input name="SSN" placeholder="SSN" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>First Name: </td><td><input name="First_Name" placeholder="First Name" type="text"></td>
+
+                            </tr>
+                            <tr>
+                                <td>Last Name: </td><td><input name="Last_Name" placeholder="Last Name" type="text"> </td>
+                            </tr>
+                            <tr>
+                                <td> Address: </td> <td><input name="Address" placeholder="Address" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td> City: </td><td><input name="City" placeholder="City" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td> State: </td>   <td><input name="State" placeholder="State" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td>Zip Code: </td><td><input name="Zip_Code" placeholder="Zip Code" type="text"> </td>
+                            </tr>
+
+                            <tr>
+                                <td> Telephone:</td> <td>  <input name="Telephone" placeholder="Telephone" type="text"> </td>
+                            </tr>
+                            <tr>
+                                <td> Email: </td>   <td> <input name="Email" placeholder="Email" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td> Start Date: </td><td><input name="Start_Date" placeholder="Start Date" type="text"></td>
+                            </tr>
+                            <tr>
+                                <td> Hourly Rate: </td><td><input name="Hourly_Rate" placeholder="Hourly Rate" type="text"> </td>
+                            </tr>
+                            <tr>
+                                <td><button type="button">Sign Up</button> </td>
+                                <td><button type = "button"> Cancel</button></td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
