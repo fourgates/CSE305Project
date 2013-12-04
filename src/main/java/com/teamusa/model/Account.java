@@ -11,6 +11,7 @@ import java.sql.Date;
  */
 public class Account 
 {
+	
 	private int accountNumber;
 	// may need to be java.sql.Timestamp
 	private Date accountCreationDate;
