@@ -1,16 +1,10 @@
 package com.teamusa.dao;
 
 import com.teamusa.model.Account;
+import com.teamusa.model.Customer;
 
-public interface AccountDAO  
-{
-	//Create
+public interface AccountDAO {
 	public void insert(Account customer);
-	//Read
+
 	public Account findByAccountNumber(int accountNumber);
-	//Update
-	public void setAccountStatus(String status);
-	//Delete
-	public void deleteAccount(int accountNumber);
-	
 }
