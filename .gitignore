@@ -1,1 +1,7 @@
 *.class
+/.settings
+.classpath
+.project
+.springBeans
+/target/classes
+/target/test-classes
