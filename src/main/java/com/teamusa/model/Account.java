@@ -15,7 +15,21 @@ public class Account
 	Date accountCreationDate;
 	int creditCardNumber;
 	String status;
-	
+	public Account()
+	{
+		accountNumber = 0;
+		accountCreationDate = new Date(accountNumber);
+		creditCardNumber = 0;
+		status = "";
+		
+	}
+	public Account(int aNum, Date date, int ccNum,String stat)
+	{
+		accountNumber = aNum;
+		accountCreationDate = date;
+		creditCardNumber = ccNum;
+		status = stat;
+	}
 	/**
 	 * @return the accountNumber
 	 */
