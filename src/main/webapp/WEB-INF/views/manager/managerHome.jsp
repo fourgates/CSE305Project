@@ -63,14 +63,14 @@
             </div>
             <div id ="menu" style="background-color: lightblue ; height: 400px;width: 200px; float: left;">
                 <ul>                  
-                    <li><a href="employeeInfo.html">Employee Information</a></li>
-                    <li><a href="sales_report.html">Sales Report</a></li>
-                    <li><a href="advertised_items.html">Advertised Items</a></li>
-                    <li><a href="transactions.html">Transactions</a></li>
-                    <li><a href="revenue.html">Revenue</a></li>
-                    <li><a href="active_item.html">Most Active Items</a></li>
-                    <li><a href="customer_by_item.html">Customer</a></li>
-                    <li><a href="items_by_company.html">Company Items</a></li>
+                    <li><a href="employeeInfo">Employee Information</a></li>
+                    <li><a href="sales_report">Sales Report</a></li>
+                    <li><a href="advertised_items">Advertised Items</a></li>
+                    <li><a href="transactions">Transactions</a></li>
+                    <li><a href="revenue">Revenue</a></li>
+                    <li><a href="active_item">Most Active Items</a></li>
+                    <li><a href="customer_by_item">Customer</a></li>
+                    <li><a href="items_by_company">Company Items</a></li>
                 </ul>
             </div>
             <div id ="content" style="background-color: white; height: 200px; width: 500px;float: left">
