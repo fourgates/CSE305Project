@@ -9,15 +9,15 @@ package com.teamusa.model;
  */
 public class Person 
 {
-	int SSN;
-	String lastName;
-	String firstName;
-	String address;
-	String city;
-	String state;
-	int zipcode;
-	int telephoneNumber;
-	String emailAddress;
+	private int SSN;
+	private String lastName;
+	private String firstName;
+	private String address;
+	private String city;
+	private String state;
+	private int zipcode;
+	private int telephoneNumber;
+	private String emailAddress;
 	
 	/**
 	 * @return the sSN

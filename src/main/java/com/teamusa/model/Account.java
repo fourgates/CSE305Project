@@ -11,10 +11,11 @@ import java.sql.Date;
  */
 public class Account 
 {
-	int accountNumber;
-	Date accountCreationDate;
-	int creditCardNumber;
-	String status;
+	private int accountNumber;
+	// may need to be java.sql.Timestamp
+	private Date accountCreationDate;
+	private int creditCardNumber;
+	private String status;
 	
 	/**
 	 * @return the accountNumber

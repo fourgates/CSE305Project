@@ -9,10 +9,10 @@ package com.teamusa.model;
  */
 public class Circle 
 {
-	int circleID;
-	String circleName;
-	int ownerOfCircle;
-	String type;
+	private int circleID;
+	private String circleName;
+	private int ownerOfCircle;
+	private String type;
 	/**
 	 * @return the circleID
 	 */
