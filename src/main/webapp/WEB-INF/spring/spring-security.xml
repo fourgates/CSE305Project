@@ -19,7 +19,8 @@
  
 		   users-by-username-query="
 		      select SSN 
-		      from users where username=?" 
+		      from users u
+		      where SSN=?" 
 		      />
  
 		

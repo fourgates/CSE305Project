@@ -52,8 +52,9 @@ public class EmployeeController extends AbstractController
 		ApplicationContext context = 
         		new ClassPathXmlApplicationContext("root-context.xml");
 		
-		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		//String name = auth.getName(); //get logged in username
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String name = auth.getName(); //get logged in username
+		System.out.println(name);
 		
 		//get user bean
 		UserDAO userDAO = (UserDAO)context.getBean("userDAO");
