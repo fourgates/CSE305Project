@@ -118,7 +118,7 @@
                                 
                         <div class="panel panel-default">
                             <div class="panel-body" style="background-color: white">
-                                
+                                <textarea class="form-control" rows="3"></textarea><br>
                                 <button class="btn btn-default" type="button"> New comment </button>
 
                                 <button class="btn btn-default" type="button">like</button>
@@ -128,7 +128,7 @@
                                 <button class="btn btn-default" type="button">edit</button>
 
                                 <button class="btn btn-default" type="button"> delete </button><br>
-                                <textarea class="form-control" rows="3"></textarea>
+                                
                                 
                             </div>
                         </div>

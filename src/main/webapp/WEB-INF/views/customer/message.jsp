@@ -121,11 +121,11 @@
                                 
                         <div class="panel panel-default">
                             <div class="panel-body" style="background-color: white">
-                                
+                                <textarea class="form-control" rows="3"></textarea><br>
                                 <button class="btn btn-default" type="button">new message</button>
 
                                 <button class="btn btn-default" type="button"> delete </button><br>
-                                <textarea class="form-control" rows="3"></textarea>
+                                
                             </div>
                         </div>
                                 
