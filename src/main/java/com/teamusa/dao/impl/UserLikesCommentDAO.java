@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.UserLikesComment;
@@ -40,5 +42,52 @@ public class UserLikesCommentDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public UserLikesComment findByValue(String[] columns, String[] vals) {
+		UserLikesComment ulc = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				ulc = new UserLikesComment(
+					rs.getInt("User"),
+					rs.getInt("Comment")
+				);
+			}
+			return ulc;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<UserLikesComment> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<UserLikesComment> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<UserLikesComment> ulcs = new ArrayList<UserLikesComment>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				ulcs.add(new UserLikesComment(
+					rs.getInt("User"),
+					rs.getInt("Comment")
+				));
+			}
+			return ulcs;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }

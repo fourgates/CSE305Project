@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.Advertisement;
@@ -47,5 +49,66 @@ public class AdvertisementDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public Advertisement findByValue(String[] columns, String[] vals) {
+		Advertisement advertisement = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				advertisement = new Advertisement(
+					rs.getInt("Advertisement_Id"),
+					rs.getInt("Employee"),
+					rs.getString("Type"),
+					rs.getDate("Date"),
+					rs.getString("Company"),
+					rs.getString("Item_Name"),
+					rs.getString("Content"),
+					rs.getInt("Unit_Price"),
+					rs.getInt("Availabe_Units")
+				);
+			}
+			return advertisement;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<Advertisement> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<Advertisement> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<Advertisement> advertisements = new ArrayList<Advertisement>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				advertisements.add(new Advertisement(
+					rs.getInt("Advertisement_Id"),
+					rs.getInt("Employee"),
+					rs.getString("Type"),
+					rs.getDate("Date"),
+					rs.getString("Company"),
+					rs.getString("Item_Name"),
+					rs.getString("Content"),
+					rs.getInt("Unit_Price"),
+					rs.getInt("Availabe_Units")
+				));
+			}
+			return advertisements;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }

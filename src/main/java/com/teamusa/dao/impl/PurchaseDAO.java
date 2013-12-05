@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.Purchase;
@@ -44,5 +46,60 @@ public class PurchaseDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public Purchase findByValue(String[] columns, String[] vals) {
+		Purchase purchase = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				purchase = new Purchase(
+					rs.getInt("Transaction_Id"),
+					rs.getDate("Date"),
+					rs.getInt("Advertisement"),
+					rs.getInt("Number_Of_Units"),
+					rs.getInt("Account"),
+					rs.getInt("User")
+				);
+			}
+			return purchase;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<Purchase> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<Purchase> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<Purchase> purchases = new ArrayList<Purchase>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				purchases.add(new Purchase(
+					rs.getInt("Transaction_Id"),
+					rs.getDate("Date"),
+					rs.getInt("Advertisement"),
+					rs.getInt("Number_Of_Units"),
+					rs.getInt("Account"),
+					rs.getInt("User")
+				));
+			}
+			return purchases;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }

@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.User;
@@ -42,5 +44,56 @@ public class UserDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public User findByValue(String[] columns, String[] vals) {
+		User user = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				user = new User(
+					rs.getInt("SSN"),
+					rs.getInt("User_Id"),
+					rs.getDate("Account_Creation_Date"),
+					rs.getInt("Rating")
+				);
+			}
+			return user;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<User> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<User> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<User> users = new ArrayList<User>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				users.add(new User(
+					rs.getInt("SSN"),
+					rs.getInt("User_Id"),
+					rs.getDate("Account_Creation_Date"),
+					rs.getInt("Rating")
+				));
+			}
+			return users;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }

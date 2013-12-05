@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.Comment;
@@ -43,5 +45,58 @@ public class CommentDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public Comment findByValue(String[] columns, String[] vals) {
+		Comment comment = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				comment = new Comment(
+					rs.getInt("Comment_Id"),
+					rs.getDate("Date"),
+					rs.getString("Content"),
+					rs.getInt("Post"),
+					rs.getInt("Author")
+				);
+			}
+			return comment;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<Comment> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<Comment> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<Comment> comments = new ArrayList<Comment>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				comments.add(new Comment(
+					rs.getInt("Comment_Id"),
+					rs.getDate("Date"),
+					rs.getString("Content"),
+					rs.getInt("Post"),
+					rs.getInt("Author")
+				));
+			}
+			return comments;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }

@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.Manager;
@@ -41,5 +43,54 @@ public class ManagerDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public Manager findByValue(String[] columns, String[] vals) {
+		Manager manager = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				manager = new Manager(
+					rs.getInt("SSN"),
+					rs.getDate("Start_Date"),
+					rs.getInt("Hourly_Rate")
+				);
+			}
+			return manager;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<Manager> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<Manager> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<Manager> managers = new ArrayList<Manager>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				managers.add(new Manager(
+					rs.getInt("SSN"),
+					rs.getDate("Start_Date"),
+					rs.getInt("Hourly_Rate")
+				));
+			}
+			return managers;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }
