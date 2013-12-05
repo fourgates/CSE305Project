@@ -27,6 +27,22 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
+	<bean id="messageDAO" class="com.teamusa.dao.impl.MessageDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="postDAO" class="com.teamusa.dao.impl.PostDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="purchaseDAO" class="com.teamusa.dao.impl.PurchaseDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="personDAO" class="com.teamusa.dao.impl.PersonDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
 
 
 

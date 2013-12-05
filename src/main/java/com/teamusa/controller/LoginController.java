@@ -28,6 +28,12 @@ public class LoginController {
  
 	}
  
+	@RequestMapping(value="/index", method = RequestMethod.GET)
+	public String index(ModelMap model) {
+ 
+		return "/login/index";
+ 
+	}
 	@RequestMapping(value="/login", method = RequestMethod.GET)
 	public String login(ModelMap model) {
  

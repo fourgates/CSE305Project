@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,12 +52,15 @@ public class EmployeeController extends AbstractController
 		ApplicationContext context = 
         		new ClassPathXmlApplicationContext("root-context.xml");
 		
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		String name = auth.getName(); //get logged in username
+		System.out.println(name);
+		
 		//get user bean
 		UserDAO userDAO = (UserDAO)context.getBean("userDAO");
 		
-	
-		
 		ArrayList<User> userList = userDAO.findAll();
+		//userDAO.f
 		
 		//add bean to model
 		request.setAttribute("userList", userList);
@@ -66,6 +71,8 @@ public class EmployeeController extends AbstractController
 	@RequestMapping("/employeeHome")
 	public String employeeHome()
 	{
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//String name = auth.getName(); //get logged in username
 		return "/employee/employeeHome";
 	}
 	
