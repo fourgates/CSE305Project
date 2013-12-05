@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.UserHasAccount;
@@ -40,5 +42,52 @@ public class UserHasAccountDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public UserHasAccount findByValue(String[] columns, String[] vals) {
+		UserHasAccount uha = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				uha = new UserHasAccount(
+					rs.getInt("User_Id"),
+					rs.getInt("Account_Number")
+				);
+			}
+			return uha;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<UserHasAccount> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<UserHasAccount> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<UserHasAccount> uhas = new ArrayList<UserHasAccount>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				uhas.add(new UserHasAccount(
+					rs.getInt("User_Id"),
+					rs.getInt("Account_Number")
+				));
+			}
+			return uhas;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }

@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.AddedTo;
@@ -40,5 +42,52 @@ public class AddedToDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public AddedTo findByValue(String[] columns, String[] vals) {
+		AddedTo addedTo = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				addedTo = new AddedTo(
+					rs.getInt("User_Id"),
+					rs.getInt("Circle_Id")
+				);
+			}
+			return addedTo;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<AddedTo> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<AddedTo> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<AddedTo> addedTos = new ArrayList<AddedTo>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				addedTos.add(new AddedTo(
+					rs.getInt("User_Id"),
+					rs.getInt("Circle_Id")
+				));
+			}
+			return addedTos;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }

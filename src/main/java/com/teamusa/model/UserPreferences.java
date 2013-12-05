@@ -4,6 +4,11 @@ public class UserPreferences {
 	
 	private int id;
 	private String preference;
+	
+	public UserPreferences(int id, String preference) {
+		this.id = id;
+		this.preference = preference;
+	}
 	/**
 	 * @return the id
 	 */

@@ -2,7 +2,9 @@ package com.teamusa.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.Employee;
@@ -42,5 +44,56 @@ public class EmployeeDAO extends AbstractDAO {
 			}
 		}
 	}
-
+	
+	public Employee findByValue(String[] columns, String[] vals) {
+		Employee employee = null;
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			if (rs.next()) {
+				employee = new Employee(
+					rs.getInt("SSN"),
+					rs.getDate("Start_Date"),
+					rs.getInt("Hourly_Rate"),
+					rs.getInt("Manager")
+				);
+			}
+			return employee;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
+	
+	public ArrayList<Employee> findAll() {
+		return this.findAllByValue(null, null);
+	}
+	
+	public ArrayList<Employee> findAllByValue(String[] columns, String[] vals) {
+		ArrayList<Employee> employees = new ArrayList<Employee>();
+		ResultSet rs = this.createResultSet(columns, vals);
+		try {
+			while (rs.next()) {
+				employees.add(new Employee(
+					rs.getInt("SSN"),
+					rs.getDate("Start_Date"),
+					rs.getInt("Hourly_Rate"),
+					rs.getInt("Manager")
+				));
+			}
+			return employees;
+		} catch (SQLException e) {
+			throw new RuntimeException(e);
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException e) {}
+			}
+		}
+	}
 }
