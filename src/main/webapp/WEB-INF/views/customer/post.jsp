@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="x-windows-950"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -103,16 +105,14 @@
                                 <th style="width: 84px"><span style="font-size: 10pt">Author</span></th>
                             </tr>
 
-                            <c:forEach items="${postList}" var="item">
-                                <tr>    <td><input type="checkbox"></td>
+                            <c:forEach items="${posts}" var="item">
 
-                                    <td>${item.post_id}</td>
+                                    <td>${item.postID}</td>
                                     <td>${item.date}</td>
                                     <td>${item.content}</td>
-                                    <td>${item.comment_count}</td>
+                                    <td>${item.commentCount}</td>
                                     <td>${item.circle}</td>
                                     <td>${item.author}</td>
-                                </tr>
                             </c:forEach>
 
                         </table>

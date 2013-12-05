@@ -12,10 +12,12 @@ import com.teamusa.dao.impl.AccountDAO;
 import com.teamusa.dao.impl.AdvertisementDAO;
 import com.teamusa.dao.impl.EmployeeDAO;
 import com.teamusa.dao.impl.ManagerDAO;
+import com.teamusa.dao.impl.PersonDAO;
 import com.teamusa.model.Account;
 import com.teamusa.model.Advertisement;
 import com.teamusa.model.Employee;
 import com.teamusa.model.Manager;
+import com.teamusa.model.Person;
 import com.teamusa.test.ManagerControllerTest;
 
 //test program 
@@ -46,7 +48,14 @@ public class App
     	ArrayList<Manager> managerList = managerDAO.findAll();
     	ArrayList<Advertisement> advertisement = addDAO.findAll();
     	
+    	PersonDAO personDAO = (PersonDAO)context.getBean("personDAO");
+    	//personDAO.delete("SSN = 111222333");
+//    	e.setSSN(1);
+//    	employeeDAO.insert(e);
     	
+//    	Person p = new Person(1, null, null, null, null, null, 0, 0, null);
+//    	personDAO.insert(p);
+    	personDAO.delete("SSN = 1");
     	/*
     	 * TEST
     	 */

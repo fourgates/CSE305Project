@@ -1,5 +1,8 @@
 package com.teamusa.controller;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import com.teamusa.dao.impl.AccountDAO;
 import com.teamusa.dao.impl.AddedToDAO;
 import com.teamusa.dao.impl.AdvertisementDAO;
@@ -19,21 +22,23 @@ import com.teamusa.dao.impl.UserPreferencesDAO;
 
 public abstract class AbstractController {
 	
-	AccountDAO accountDao = new AccountDAO();
-	AddedToDAO addedToDao = new AddedToDAO();
-	AdvertisementDAO advertisementDao = new AdvertisementDAO();
-	CircleDAO circleDAO = new CircleDAO();
-	CommentDAO commentDao = new CommentDAO();
-	EmployeeDAO employeeDao = new EmployeeDAO();
-	ManagerDAO managerDao = new ManagerDAO();
-	MessageDAO messageDao = new MessageDAO();
-	PersonDAO personDao = new PersonDAO();
-	PostDAO postDao = new PostDAO();
-	PurchaseDAO purchaseDao = new PurchaseDAO();
-	UserDAO userDao = new UserDAO();
-	UserHasAccountDAO uhaDao = new UserHasAccountDAO();
-	UserLikesCommentDAO ulcDao = new UserLikesCommentDAO();
-	UserLikesPostDAO ulpDao = new UserLikesPostDAO();
-	UserPreferencesDAO upDao = new UserPreferencesDAO();
+	ApplicationContext context = 
+    		new ClassPathXmlApplicationContext("root-context.xml");
+	AccountDAO accountDao = (AccountDAO) context.getBean("accountDAO");
+	AddedToDAO addedToDao = (AddedToDAO) context.getBean("addedToDAO");
+	AdvertisementDAO advertisementDao = (AdvertisementDAO) context.getBean("addDAO");
+	CircleDAO circleDAO = (CircleDAO) context.getBean("circleDAO");
+	CommentDAO commentDao = (CommentDAO) context.getBean("commentDAO");
+	EmployeeDAO employeeDao = (EmployeeDAO) context.getBean("employeeDAO");
+	ManagerDAO managerDao = (ManagerDAO) context.getBean("managerDAO");
+	MessageDAO messageDao = (MessageDAO) context.getBean("messageDAO");
+	PersonDAO personDao = (PersonDAO) context.getBean("personDAO");
+	PostDAO postDao = (PostDAO) context.getBean("postDAO");
+	PurchaseDAO purchaseDao = (PurchaseDAO) context.getBean("purchaseDAO");
+	UserDAO userDao = (UserDAO) context.getBean("userDAO");
+	UserHasAccountDAO uhaDao = (UserHasAccountDAO) context.getBean("userHasAccountDAO");
+	UserLikesCommentDAO ulcDao = (UserLikesCommentDAO) context.getBean("userLikesCommentDAO");
+	UserLikesPostDAO ulpDao = (UserLikesPostDAO) context.getBean("userLikesPostDAO");
+	UserPreferencesDAO upDao = (UserPreferencesDAO) context.getBean("userPreferencesDAO");
 
 }

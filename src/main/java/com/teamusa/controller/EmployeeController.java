@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.teamusa.dao.impl.AdvertisementDAO;
+import com.teamusa.dao.impl.PersonDAO;
 import com.teamusa.dao.impl.UserDAO;
 import com.teamusa.model.Advertisement;
 import com.teamusa.model.Person;
@@ -77,8 +78,16 @@ public class EmployeeController extends AbstractController
 	}
 	
 	@RequestMapping("/mailingList")
-	public String mailingList()
-	{
+	public String mailingList(HttpServletRequest request)
+	{	
+		ApplicationContext context = 
+        		new ClassPathXmlApplicationContext("root-context.xml");
+		
+		PersonDAO personDAO = (PersonDAO)context.getBean("personDAO");
+		
+		ArrayList<Person> people = personDAO.findAll();
+		
+		request.setAttribute("people", people);
 		return "/employee/mailingList";
 	}
 	

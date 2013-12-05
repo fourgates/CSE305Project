@@ -5,6 +5,8 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="x-windows-950"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ page session="false"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -106,7 +108,7 @@
                             <c:forEach items="${messageList}" var="item">
                                 <tr>    <td><input type="checkbox"></td>
 
-                                    <td>${item.message_id}</td>
+                                    <td>${item.messageID}</td>
                                     <td>${item.date}</td>
                                     <td>${item.subject}</td>
                                     <td>${item.content}</td>

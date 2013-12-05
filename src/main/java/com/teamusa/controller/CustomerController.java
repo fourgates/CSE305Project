@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -88,22 +90,44 @@ public class CustomerController extends AbstractController {
 	public String message(HttpServletRequest request) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"root-context.xml");
-		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		//String name = auth.getName(); //get logged in usernam	
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		int id = Integer.parseInt(auth.getName()); //get logged in usernam	
 		// get bean
 		MessageDAO messageDAO = (MessageDAO) context.getBean("messageDAO");
-
+		
+		UserDAO userDAO = (UserDAO) context.getBean("userDAO");
 		// get list of messages
 		ArrayList<Message> messageList = messageDAO.findAll();
+		String[] columns = {"SSN"};
+		String[] vals = {" = " + id};
+		int userId = userDAO.findByValue(columns, vals).getUserID();
+		String[] cols = {"Receiver"};
+		String[] values = {" = " + userId};
+		ArrayList<Message> messages = messageDAO.findAllByValue(cols, values);
 
 		// set bean in view
-		request.setAttribute("messageList", messageList);
+		request.setAttribute("messageList", messages);
 
 		return "/customer/message";
 	}
 
 	@RequestMapping("/post")
-	public String post() {
+	public String post(HttpServletRequest request) {
+		ApplicationContext context = new ClassPathXmlApplicationContext(
+				"root-context.xml");
+		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		int id = Integer.parseInt(auth.getName()); //get logged in userna
+		
+		PostDAO postDAO = (PostDAO)context.getBean("postDAO");
+		UserDAO userDAO = (UserDAO)context.getBean("userDAO");
+		String[] columns = {"SSN"};
+		String[] vals = {" = " + id};
+		int userId = userDAO.findByValue(columns, vals).getUserID();
+		String[] cols = {"Author"};
+		String[] values = {" = " + userId};
+		ArrayList<Post> posts = postDAO.findAllByValue(cols, values);
+		System.out.println("size: "+posts.size());
+		request.setAttribute("post", posts);
 		return "/customer/post";
 	}
 

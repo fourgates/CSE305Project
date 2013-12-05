@@ -5,13 +5,20 @@ package com.teamusa.controller;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.TreeMap;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.teamusa.dao.impl.AdvertisementDAO;
+import com.teamusa.dao.impl.EmployeeDAO;
 import com.teamusa.model.Advertisement;
 import com.teamusa.model.Employee;
 import com.teamusa.model.Person;
@@ -27,14 +34,26 @@ import com.teamusa.model.User;
 public class ManagerController extends AbstractController {
 	
 	@RequestMapping("/activeItem")
-	public String handleActiveItem()
+	public String handleActiveItem(HttpServletRequest request)
 	{
+		ApplicationContext context = 
+        		new ClassPathXmlApplicationContext("root-context.xml");
+		
+		Collection<String> activeItems = this.getMostActiveItems(); 
+		request.setAttribute("activeItems", activeItems);
 		return "/manager/activeItem";
 	}
 	
 	@RequestMapping("/advertisedItems")
-	public String advertisedItems()
+	public String advertisedItems(HttpServletRequest request)
 	{
+		ApplicationContext context = 
+        		new ClassPathXmlApplicationContext("root-context.xml");
+		
+		AdvertisementDAO addDAO = (AdvertisementDAO)context.getBean("addDAO");
+		ArrayList<Advertisement> adds = addDAO.findAll();
+		
+		request.setAttribute("adds", adds);
 		return "/manager/advertisedItems";
 	}
 	
@@ -45,8 +64,16 @@ public class ManagerController extends AbstractController {
 	}
 	
 	@RequestMapping("/employeeInfo")
-	public String employeeInfo()
+	public String employeeInfo(HttpServletRequest request)
 	{
+		ApplicationContext context = 
+        		new ClassPathXmlApplicationContext("root-context.xml");
+		
+		EmployeeDAO employeeDAO = (EmployeeDAO)context.getBean("employeeDAO");
+		
+		ArrayList<Employee> employees = employeeDAO.findAll();
+		
+		request.setAttribute("employees", employees);
 		return "/manager/employeeInfo";
 	}
 	
@@ -230,7 +257,7 @@ public class ManagerController extends AbstractController {
 		return customerRevenue.lastEntry().getValue();
 	}
 	
-	public ArrayList<String> getMostActiveItems() {
+	public Collection<String> getMostActiveItems() {
 		TreeMap<Integer, String> activeItems = new TreeMap<Integer, String>();
 		ArrayList<Advertisement> ads = this.advertisementDao.findAll();
 		ArrayList<Purchase> purchases = this.purchaseDao.findAll();
@@ -244,8 +271,8 @@ public class ManagerController extends AbstractController {
 			}
 			activeItems.put(sum, ad.getItemName());
 		}
-		ArrayList<String> items = (ArrayList<String>) activeItems.values();
-		Collections.reverse(items);
+		Collection<String> items = activeItems.values();
+//		Collections.reverse(items);
 		return items;
 	}
 	

@@ -44,8 +44,24 @@
 	</bean>
 
 
-
-
+	<bean id="userHasAccountDAO" class="com.teamusa.dao.impl.UserHasAccountDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="userLikesCommentDAO" class="com.teamusa.dao.impl.UserLikesCommentDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="userLikesPostDAO" class="com.teamusa.dao.impl.UserLikesPostDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="userPreferencesDAO" class="com.teamusa.dao.impl.UserPreferencesDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	<bean id="addedToDAO" class="com.teamusa.dao.impl.AddedToDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+		<bean id="commentDAO" class="com.teamusa.dao.impl.CommentDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
 
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
