@@ -4,7 +4,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.teamusa.dao.AccountDAO;
+import com.teamusa.dao.impl.EmployeeDAO;
 import com.teamusa.model.Account;
+import com.teamusa.test.ManagerControllerTest;
 
 //test program 
 public class App 
@@ -14,19 +16,23 @@ public class App
 		//get app context, instiate java beans
     	ApplicationContext context = 
         		new ClassPathXmlApplicationContext("root-context.xml");
-    	
+    	ManagerControllerTest managerTest = new ManagerControllerTest() ;
+    	EmployeeDAO employeeDAO = (EmployeeDAO)context.getBean("employeeDAO");
+    	String[] columns = {"SSN"};
+    	String[] vals = {" = 111222333"};
+    	employeeDAO.findByValue(columns, vals);
     		//get the jdbcCustomoerDAO
             //CustomerDAO customerDAO = (CustomerDAO) context.getBean("customerDAO");
-            AccountDAO accountDAO = (AccountDAO)context.getBean("accountDAO");
+            //AccountDAO accountDAO = (AccountDAO)context.getBean("accountDAO");
           
             
             
             
             //create new customer to test 
             //Customer customer = new Customer(2, "mkyong",28);
-            Account account = accountDAO.findByAccountNumber(90010101);
+            //Account account = accountDAO.findByAccountNumber(90010101);
             
-            System.out.println("Account Status: "+account.getStatus());
+            //System.out.println("Account Status: "+account.getStatus());
             
             //test insert and findCustomerId
             //customerDAO.insert(customer);

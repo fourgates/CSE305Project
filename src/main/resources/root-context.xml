@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
@@ -11,17 +11,33 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
+	<bean id="managerDAO" class="com.teamusa.dao.impl.ManagerDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+
+
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url"
+<!-- 		<property name="url"
 			value="jdbc:mysql://mysql2.cs.stonybrook.edu:3306/pninan" />
 		<property name="username" value="pninan" />
-		<property name="password" value="106977622" />
-		<!-- <property name="url" value="jdbc:mysql://mysql2.cs.stonybrook.edu:3306/mhaarhaus" 
+		<property name="password" value="106977622" /> -->
+		 <property name="url" value="jdbc:mysql://mysql2.cs.stonybrook.edu:3306/mhaarhaus" 
 			/> <property name="username" value="mhaarhaus" /> <property name="password" 
-			value="107982171" /> -->
+			value="107982171" /> 
 	</bean>
 
+	<bean id="employeeDAO" class="com.teamusa.dao.impl.EmployeeDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<bean id="abstractDAO" class="com.teamusa.dao.AbstractDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<!-- <mvc:resources mapping="/resources/**" location="/resources/mytheme/" 
+		/> -->
 
 </beans>

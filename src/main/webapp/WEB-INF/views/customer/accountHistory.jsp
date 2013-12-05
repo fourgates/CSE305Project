@@ -72,7 +72,11 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">Sidebar</li>
                             <li class="active"><a href="#"></a></li>
+<<<<<<< HEAD
                             <li><a href="employeeInfo">Circle</a></li>
+=======
+                           <li><a href="employeeInfo">Circle</a></li>
+>>>>>>> 038d9bd682923709c4bf59517952a337894421f6
                             <li><a href="sales_report">Post</a></li>
                             <li><a href="advertised_items">Message</a></li>
                         </ul>
@@ -82,13 +86,21 @@
                     <div class="hero-unit">
                         <h1></h1>
                         <h2>Account History</h2>   
+<<<<<<< HEAD
                         Select an account: 
+=======
+                         Select an account: 
+>>>>>>> 038d9bd682923709c4bf59517952a337894421f6
                         <select>
                             <option value="company_name">account </option>
                         </select>
                         <table class="table table-striped">  
                             <tr>
+<<<<<<< HEAD
                                 <th style="width: 84px"><span style="font-size: 10pt">Transaction ID</span></th>
+=======
+                               <th style="width: 84px"><span style="font-size: 10pt">Transaction ID</span></th>
+>>>>>>> 038d9bd682923709c4bf59517952a337894421f6
                                 <th style="width: 84px"><span style="font-size: 10pt">Advertisement</span></th>                               
                                 <th style="width: 84px"><span style="font-size: 10pt">Number of Units</span></th>
                                 <th style="width: 84px"><span style="font-size: 10pt">Date</span></th>

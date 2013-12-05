@@ -16,7 +16,11 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
+<<<<<<< HEAD
         <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+=======
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+>>>>>>> 038d9bd682923709c4bf59517952a337894421f6
         <style type="text/css">
             body {
                 padding-top: 60px;
@@ -35,7 +39,12 @@
                 }
             }
         </style>
+<<<<<<< HEAD
         <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+=======
+        <!-- <link href="../views/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
+        <link href="<c:url value="/resources/mytheme/bootstrap/bootstrap-responsive.css" />" rel="stylesheet">
+>>>>>>> 038d9bd682923709c4bf59517952a337894421f6
       
     </head>
     <body>
