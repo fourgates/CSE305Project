@@ -75,7 +75,7 @@
                 <div class="span9">
                     <div class="hero-unit">
                         <h1></h1>
-                        <h2>Record Transaction</h2>   
+                        <h2>Create a Circle </h2>   
                         <table class="table table-striped">  
                              <tr>
                                  <td> Circle ID:</td><td><input class="form-control" name="circle_id" placeholder="circle id" type="text"></td>
