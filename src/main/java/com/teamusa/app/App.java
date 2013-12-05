@@ -1,11 +1,14 @@
 package com.teamusa.app;
 
+import java.util.ArrayList;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.teamusa.dao.AccountDAO;
 import com.teamusa.dao.impl.EmployeeDAO;
 import com.teamusa.model.Account;
+import com.teamusa.model.Employee;
 import com.teamusa.test.ManagerControllerTest;
 
 //test program 
@@ -20,7 +23,14 @@ public class App
     	EmployeeDAO employeeDAO = (EmployeeDAO)context.getBean("employeeDAO");
     	String[] columns = {"SSN"};
     	String[] vals = {" = 111222333"};
-    	employeeDAO.findByValue(columns, vals);
+    	Employee e = employeeDAO.findByValue(columns, vals);
+    	
+    	ArrayList<Employee> list = employeeDAO.findAllByValue(columns, vals);
+    	
+    	employeeDAO.delete("SSN = 111222333");
+    	
+    	System.out.println(e.getHourlyRate());
+    	System.out.println(list.get(0).getHourlyRate());
     		//get the jdbcCustomoerDAO
             //CustomerDAO customerDAO = (CustomerDAO) context.getBean("customerDAO");
             //AccountDAO accountDAO = (AccountDAO)context.getBean("accountDAO");
