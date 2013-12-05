@@ -3,6 +3,10 @@ package com.teamusa.controller;
 import java.sql.Date;
 import java.util.ArrayList;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -15,9 +19,12 @@ import com.teamusa.model.User;
 @RequestMapping("employee")
 public class EmployeeController extends AbstractController
 {	
+	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
 	@RequestMapping("/advertisement")
 	public String advertisement()
 	{
+		ApplicationContext context = 
+        		new ClassPathXmlApplicationContext("root-context.xml");
 		return "/employee/advertisement";
 	}
 	
@@ -33,7 +40,7 @@ public class EmployeeController extends AbstractController
 		return "/employee/employeeHome";
 	}
 	
-	@RequestMapping("/mailing_list")
+	@RequestMapping("/mailingList")
 	public String mailingList()
 	{
 		return "/employee/mailingList";
