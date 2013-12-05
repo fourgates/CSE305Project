@@ -27,9 +27,74 @@ body {
 	padding-bottom: 40px;
 }
 
+<<<<<<< HEAD
 .sidebar-nav {
 	padding: 9px 0;
 }
+=======
+    </head>
+    <body>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="#">Facebook +</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#contact">Logout</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Sidebar</li>
+                            <li class="active"><a href="#"></a></li>
+                            <li><a href="recordTransaction">Transaction</a></li>
+                            <li><a href="customerInfo">Customer Information</a></li>
+                            <li><a href="advertisement">Advertisement</a></li>
+                        </ul>
+                    </div><!--/.well -->
+                </div><!--/span-->
+                <div class="span9">
+                    <div class="hero-unit">
+                        <h1></h1>
+                        <h2>Advertisement</h2>   
+                        <table class="table table-striped">  
+                            <tr>
+                                <th style="width: 100px"><span style="font-size: 10pt">Advertisement id</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Employee</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Type</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Date</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Company</span></th>
+                                <th style="width: 130px"><span style="font-size: 10pt">Item Name</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Content</span></th>
+                                <th style="width: 100px"><span style="font-size: 10pt">Unit Price</span></th>
+                                <th style="width: 100px"><span style="font-size: 10pt">Available Units</span></th>
+                               
+                            </tr>   
+                            <tr>
+                                 <td><button class="btn btn-default" type="button">Create</button> </td>
+                                 <td><button class="btn btn-default" type = "button"> Cancel</button></td>
+                             </tr>  
+                        </table>
+                         
+                            
+                    </div>
+                </div>
+            </div>
+>>>>>>> branch 'master' of https://github.com/fourgates/CSE305Project.git
 
 @media ( max-width : 980px) {
 	/* Enable use of floated navbar text */
