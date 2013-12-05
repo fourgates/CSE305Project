@@ -71,9 +71,9 @@
             </div>
             <div id ="menu" style="background-color: lightblue ; height: 400px;width: 200px; float: left;">
                 <ul>                  
-                    <li><a href="record_transaction.html">Transaction</a></li>
-                    <li><a href="customerInfo.html">Customer Information</a></li>
-                    <li><a href="advertisement.html">Advertisement</a></li>
+                    <li><a href="record_transaction">Transaction</a></li>
+                    <li><a href="customerInfo">Customer Information</a></li>
+                    <li><a href="advertisement">Advertisement</a></li>
                 </ul>
             </div>
         </div>
