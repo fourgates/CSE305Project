@@ -87,6 +87,8 @@ body {
 					<h2>Customer Information</h2>
 					<table class="table table-striped">
 						<tr>
+                                                        <th style="width: 84px"><span style="font-size: 10pt">
+									</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">SSN</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">User
 									Id</span></th>
@@ -99,6 +101,7 @@ body {
 						</tr>
 						<c:forEach items="${userList}" var="item">
 							<tr>
+                                                                <td><input type="checkbox"></td>
 								<td>${item.SSN}</td>
 								<td>${item.userID}</td>
 								<td>${item.accountCreationDate}</td>

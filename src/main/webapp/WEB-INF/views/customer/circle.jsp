@@ -98,13 +98,27 @@ body {
 					<h2>User's current circles as owner</h2>
 					<table class="table table-striped">
 						<tr>
+                                                        <th style="width: 84px"><span style="font-size: 10pt">
+									</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">Circle
 									ID</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">Circle
 									Name</span></th>
+                                                        <th style="width: 84px"><span style="font-size: 10pt">
+									Owner Of Circle</span></th>    
 							<th style="width: 84px"><span style="font-size: 10pt">Type</span></th>
+                                                </tr>
+                                                        
+
+                                               
+                                                    
+                                                
+
+  
+ 
 							<c:forEach items="${circleList}" var="item">
-								<tr>
+								<tr>    <td><input type="checkbox"></td>
+                                                                    
 									<td>${item.circleID}</td>
 									<td>${item.circleName}</td>
 									<td>${item.ownerOfCircle}</td>
@@ -124,6 +138,8 @@ body {
 					<h2>User's circle regard to other users' circles</h2>
 					<table class="table table-striped">
 						<tr>
+                                                        <th style="width: 84px"><span style="font-size: 10pt">
+									</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">Circle
 									ID</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">Circle
@@ -133,6 +149,7 @@ body {
 									Of Circle</span></th>
 							<c:forEach items="${circleList}" var="item">
 								<tr>
+                                                                        <td><input type="checkbox"></td>
 									<td>${item.circleID}</td>
 									<td>${item.circleName}</td>
 									<td>${item.ownerOfCircle}</td>

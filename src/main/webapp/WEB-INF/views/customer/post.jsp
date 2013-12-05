@@ -88,7 +88,7 @@
                     <div class="hero-unit">
                         <h1></h1>
                         <h2>Post</h2>
-                        <div class='post-unit'>
+                        <div width="200px" class='post-unit'>
                             <div>
                                 <blockquote>
                                     <p>facebook?.</p>
