@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.AddedTo;
+import com.teamusa.util.ConnectionPair;
 
 public class AddedToDAO extends AbstractDAO {
 	
@@ -45,7 +46,9 @@ public class AddedToDAO extends AbstractDAO {
 	
 	public AddedTo findByValue(String[] columns, String[] vals) {
 		AddedTo addedTo = null;
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				addedTo = new AddedTo(
@@ -62,6 +65,11 @@ public class AddedToDAO extends AbstractDAO {
 					rs.close();
 				} catch (SQLException e) {}
 			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
 		}
 	}
 	
@@ -71,7 +79,9 @@ public class AddedToDAO extends AbstractDAO {
 	
 	public ArrayList<AddedTo> findAllByValue(String[] columns, String[] vals) {
 		ArrayList<AddedTo> addedTos = new ArrayList<AddedTo>();
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				addedTos.add(new AddedTo(
@@ -86,6 +96,11 @@ public class AddedToDAO extends AbstractDAO {
 			if (rs != null) {
 				try {
 					rs.close();
+				} catch (SQLException e) {}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
 				} catch (SQLException e) {}
 			}
 		}

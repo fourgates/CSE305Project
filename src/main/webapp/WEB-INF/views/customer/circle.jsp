@@ -17,6 +17,7 @@
         <meta name="author" content="">
 
         <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+
         <style type="text/css">
             body {
                 padding-top: 60px;
@@ -36,9 +37,13 @@
             }
         </style>
 
+
         <!-- <link href="../views/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
         <link href="<c:url value="/resources/mytheme/bootstrap/bootstrap-responsive.css" />" rel="stylesheet">
-      
+
+        <!-- <link href="../views/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
+        <link href="<c:url value="/resources/mytheme/bootstrap/bootstrap-responsive.css" />" rel="stylesheet">
+
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">

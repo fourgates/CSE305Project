@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.Account;
+import com.teamusa.util.ConnectionPair;
 
 public class AccountDAO extends AbstractDAO {
 	
@@ -47,7 +48,9 @@ public class AccountDAO extends AbstractDAO {
 	
 	public Account findByValue(String[] columns, String[] vals) {
 		Account account = null;
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				account = new Account(
@@ -66,6 +69,11 @@ public class AccountDAO extends AbstractDAO {
 					rs.close();
 				} catch (SQLException e) {}
 			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
 		}
 	}
 	
@@ -75,7 +83,9 @@ public class AccountDAO extends AbstractDAO {
 	
 	public ArrayList<Account> findAllByValue(String[] columns, String[] vals) {
 		ArrayList<Account> accounts = new ArrayList<Account>();
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				accounts.add(new Account(
