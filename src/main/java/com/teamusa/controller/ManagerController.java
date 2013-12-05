@@ -5,7 +5,9 @@ package com.teamusa.controller;
 
 import java.sql.Date;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.GregorianCalendar;
+import java.util.TreeMap;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,22 +26,22 @@ import com.teamusa.model.User;
 @RequestMapping("/manager")
 public class ManagerController extends AbstractController {
 	
-	@RequestMapping("/active_item")
+	@RequestMapping("/activeItem")
 	public String handleActiveItem()
 	{
-		return "/manager/active_item";
+		return "/manager/activeItem";
 	}
 	
-	@RequestMapping("/advertised_items")
+	@RequestMapping("/advertisedItems")
 	public String advertisedItems()
 	{
-		return "/manager/advertised_items";
+		return "/manager/advertisedItems";
 	}
 	
-	@RequestMapping("/customer_by_item")
+	@RequestMapping("/customerByItem")
 	public String customerByItem()
 	{
-		return "/manager/customer_by_item";
+		return "/manager/customerByItem";
 	}
 	
 	@RequestMapping("/employeeInfo")
@@ -48,10 +50,10 @@ public class ManagerController extends AbstractController {
 		return "/manager/employeeInfo";
 	}
 	
-	@RequestMapping("/items_by_company")
+	@RequestMapping("/itemsByCompany")
 	public String itemsByCompany()
 	{
-		return "/manager/items_by_company";
+		return "/manager/itemsByCompany";
 	}
 	
 	@RequestMapping("/managerHome")
@@ -66,10 +68,10 @@ public class ManagerController extends AbstractController {
 		return "/manager/revenue";
 	}
 	
-	@RequestMapping("/sales_report")
+	@RequestMapping("/salesReport")
 	public String salesReport()
 	{
-		return "/manager/sales_report";
+		return "/manager/salesReport";
 	}
 	
 	@RequestMapping("/transactions")
@@ -184,5 +186,89 @@ public class ManagerController extends AbstractController {
 			}
 		}
 		return sum;
+	}
+	
+	public int getHighestRevenueGeneratingEmployee() {
+		TreeMap<Integer, Integer> employeeRevenue = new TreeMap<Integer, Integer>();
+		ArrayList<Employee> employees = this.employeeDao.findAll();
+		ArrayList<Purchase> purchases = this.purchaseDao.findAll();
+		for (Employee employee : employees) {
+			int sum = 0;
+			String[] columns = {"Employee"};
+			String[] vals = {employee.getSSN()+""};
+			ArrayList<Advertisement> empAds = this.advertisementDao.findAllByValue(columns, vals);
+			for (Purchase purchase : purchases) {
+				for (Advertisement ad : empAds) {
+					if (purchase.getAdvertisement() == ad.getAdvertisementID()) {
+						sum += ad.getUnitPrice() * purchase.getNumberOfUnits();
+					}
+				}
+			}
+			employeeRevenue.put(sum, employee.getSSN());
+		}
+		return employeeRevenue.lastEntry().getValue();
+	}
+	
+	public int getHighestRevenueGeneratingCustomer() {
+		TreeMap<Integer, Integer> customerRevenue = new TreeMap<Integer, Integer>();
+		ArrayList<User> users = this.userDao.findAll();
+		ArrayList<Advertisement> ads = this.advertisementDao.findAll();
+		for (User user : users) {
+			int sum = 0;
+			String[] columns = {"User"};
+			String[] vals = {user.getUserID()+""};
+			ArrayList<Purchase> userPurchases = this.purchaseDao.findAllByValue(columns, vals);
+			for (Advertisement ad : ads) {
+				for (Purchase purchase : userPurchases) {
+					if (purchase.getAdvertisement() == ad.getAdvertisementID()) {
+						sum += ad.getUnitPrice() * purchase.getNumberOfUnits();
+					}
+				}
+			}
+			customerRevenue.put(sum, user.getSSN());
+		}
+		return customerRevenue.lastEntry().getValue();
+	}
+	
+	public ArrayList<String> getMostActiveItems() {
+		TreeMap<Integer, String> activeItems = new TreeMap<Integer, String>();
+		ArrayList<Advertisement> ads = this.advertisementDao.findAll();
+		ArrayList<Purchase> purchases = this.purchaseDao.findAll();
+		
+		for (Advertisement ad : ads) {
+			int sum = 0;
+			for (Purchase purchase : purchases) {
+				if (ad.getAdvertisementID() == purchase.getAdvertisement()) {
+					sum += purchase.getNumberOfUnits();
+				}
+			}
+			activeItems.put(sum, ad.getItemName());
+		}
+		ArrayList<String> items = (ArrayList<String>) activeItems.values();
+		Collections.reverse(items);
+		return items;
+	}
+	
+	public ArrayList<Integer> getCustomersByItemPurchased(String itemName) {
+		ArrayList<Integer> customers = new ArrayList<Integer>();
+		String[] columns = {"Item_Name"};
+		String[] vals = {itemName};
+		ArrayList<Advertisement> itemAds = this.advertisementDao.findAllByValue(columns, vals);
+		ArrayList<Purchase> purchases = this.purchaseDao.findAll();
+		
+		for (Purchase purchase : purchases) {
+			for (Advertisement ad : itemAds) {
+				if (purchase.getAdvertisement() == ad.getAdvertisementID()) {
+					customers.add(purchase.getUser());
+				}
+			}
+		}
+		return customers;
+	}
+	
+	public ArrayList<Advertisement> getAdsByCompany(String company) {
+		String[] columns = {"Company"};
+		String[] vals = {company};
+		return this.advertisementDao.findAllByValue(columns, vals);
 	}
 }

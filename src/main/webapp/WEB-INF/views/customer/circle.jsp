@@ -111,7 +111,9 @@
 
         </div>
         
-        <script src="../bootstrap/js/jquery.js"></script>
+        <!-- <c:url value="/resources/mytheme/bootstrap/js/jquery.js" /> -->
+        <link href="<c:url value="/resources/mytheme/bootstrap/bootstrap-responsive.css" />" rel="stylesheet">
+        <script src="<c:url value='/resources/mytheme/bootstrap/js/jquery.js' />"></script>
         <script src="../bootstrap/js/bootstrap-transition.js"></script>
         <script src="../bootstrap/js/bootstrap-alert.js"></script>
         <script src="../bootstrap/js/bootstrap-modal.js"></script>
