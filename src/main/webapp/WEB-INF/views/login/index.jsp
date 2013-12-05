@@ -1,6 +1,11 @@
-<!--
-To change this template, choose Tools | Templatesand open the template in the editor.
---><!DOCTYPE html>
+<%-- 
+    Document   : index
+    Created on : Dec 5, 2013, 2:47:01 AM
+    Author     : funfun
+--%>
+
+<%@page contentType="text/html" pageEncoding="x-windows-950"%>
+<!DOCTYPE html>
 <html>
     <head>
         <meta content="text/html; charset=UTF-8" http-equiv="content-type">
