@@ -216,11 +216,7 @@ public class ManagerController extends AbstractController {
 		for (User user : users) {
 			int sum = 0;
 			String[] columns = {"User"};
-<<<<<<< HEAD
-			String[] vals = {user.getUserID()+""};
-=======
 			String[] vals = {" = " + user.getUserID()};
->>>>>>> d8665e7da062191f4bff0feb82ded605de59c74d
 			ArrayList<Purchase> userPurchases = this.purchaseDao.findAllByValue(columns, vals);
 			for (Advertisement ad : ads) {
 				for (Purchase purchase : userPurchases) {
@@ -256,11 +252,7 @@ public class ManagerController extends AbstractController {
 	public ArrayList<Integer> getCustomersByItemPurchased(String itemName) {
 		ArrayList<Integer> customers = new ArrayList<Integer>();
 		String[] columns = {"Item_Name"};
-<<<<<<< HEAD
-		String[] vals = {itemName};
-=======
 		String[] vals = {" = " + itemName};
->>>>>>> d8665e7da062191f4bff0feb82ded605de59c74d
 		ArrayList<Advertisement> itemAds = this.advertisementDao.findAllByValue(columns, vals);
 		ArrayList<Purchase> purchases = this.purchaseDao.findAll();
 		
@@ -276,11 +268,7 @@ public class ManagerController extends AbstractController {
 	
 	public ArrayList<Advertisement> getAdsByCompany(String company) {
 		String[] columns = {"Company"};
-<<<<<<< HEAD
-		String[] vals = {company};
-=======
 		String[] vals = {" = " + company};
->>>>>>> d8665e7da062191f4bff0feb82ded605de59c74d
 		return this.advertisementDao.findAllByValue(columns, vals);
 	}
 }

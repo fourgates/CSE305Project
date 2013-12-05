@@ -16,7 +16,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/resources/mytheme/bootstrap/css/bootstrap.css" rel="stylesheet">
 
         <style type="text/css">
             body {
@@ -39,10 +39,8 @@
 
 
         <!-- <link href="../views/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
-        <link href="<c:url value="/resources/mytheme/bootstrap/bootstrap-responsive.css" />" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-responsive.css" />" rel="stylesheet">
 
-        <!-- <link href="../views/bootstrap/css/bootstrap-responsive.css" rel="stylesheet"> -->
-        <link href="<c:url value="/resources/mytheme/bootstrap/bootstrap-responsive.css" />" rel="stylesheet">
 
     </head>
     <body>
@@ -118,9 +116,8 @@
         </div>
         
         <!-- <c:url value="/resources/mytheme/bootstrap/js/jquery.js" /> -->
-        <link href="<c:url value="/resources/mytheme/bootstrap/bootstrap-responsive.css" />" rel="stylesheet">
-        <script src="<c:url value='/resources/mytheme/bootstrap/js/jquery.js' />"></script>
-        <script src="../bootstrap/js/bootstrap-transition.js"></script>
+        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-transition.js"></script>
+       	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-alert.js"></script>
         <script src="../bootstrap/js/bootstrap-alert.js"></script>
         <script src="../bootstrap/js/bootstrap-modal.js"></script>
         <script src="../bootstrap/js/bootstrap-dropdown.js"></script>
