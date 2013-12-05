@@ -31,7 +31,7 @@ public class EmployeeController
 		return "/employee/mailing_list";
 	}
 	
-	@RequestMapping("/recordTransaction")
+	@RequestMapping("/record_transaction")
 	public String recordTransaction()
 	{
 		return "/employee/record_transaction";
