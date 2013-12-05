@@ -5,9 +5,7 @@
 
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
-	<bean id="customerDAO" class="com.teamusa.dao.impl.JdbcCustomerDAO">
-		<property name="dataSource" ref="dataSource" />
-	</bean>
+
 
 	<bean id="accountDAO" class="com.teamusa.dao.impl.JdbcAccountDAO">
 		<property name="dataSource" ref="dataSource" />
@@ -24,5 +22,6 @@
 			/> <property name="username" value="mhaarhaus" /> <property name="password" 
 			value="107982171" /> -->
 	</bean>
+
 
 </beans>

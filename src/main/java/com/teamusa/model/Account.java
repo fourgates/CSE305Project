@@ -18,6 +18,10 @@ public class Account
 	private int creditCardNumber;
 	private String status;
 	
+	public Account()
+	{
+		
+	}
 	public Account(int accountNumber, Date accountCreationDate, int creditCardNumber, String status) {
 		this.accountNumber = accountNumber;
 		this.accountCreationDate = accountCreationDate;
