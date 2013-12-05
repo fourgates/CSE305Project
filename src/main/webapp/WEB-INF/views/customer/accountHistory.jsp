@@ -56,6 +56,10 @@
                             <li><a href="#contact">Contact</a></li>
                             <li><a href="#contact">Logout</a></li>
                         </ul>
+                        <form class="form-search">
+                            <input type="text" class="input-medium search-query">
+                            <button type="submit" class="btn">Search</button>
+                        </form>
                     </div><!--/.nav-collapse-->
                 </div>
             </div>
