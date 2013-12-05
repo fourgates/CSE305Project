@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.Purchase;
+import com.teamusa.util.ConnectionPair;
 
 public class PurchaseDAO extends AbstractDAO {
 	
@@ -49,7 +50,9 @@ public class PurchaseDAO extends AbstractDAO {
 	
 	public Purchase findByValue(String[] columns, String[] vals) {
 		Purchase purchase = null;
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				purchase = new Purchase(
@@ -70,6 +73,11 @@ public class PurchaseDAO extends AbstractDAO {
 					rs.close();
 				} catch (SQLException e) {}
 			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
 		}
 	}
 	
@@ -79,7 +87,9 @@ public class PurchaseDAO extends AbstractDAO {
 	
 	public ArrayList<Purchase> findAllByValue(String[] columns, String[] vals) {
 		ArrayList<Purchase> purchases = new ArrayList<Purchase>();
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				purchases.add(new Purchase(
@@ -98,6 +108,11 @@ public class PurchaseDAO extends AbstractDAO {
 			if (rs != null) {
 				try {
 					rs.close();
+				} catch (SQLException e) {}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
 				} catch (SQLException e) {}
 			}
 		}

@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.UserLikesPost;
+import com.teamusa.util.ConnectionPair;
 
 public class UserLikesPostDAO extends AbstractDAO {
 	
@@ -45,7 +46,9 @@ public class UserLikesPostDAO extends AbstractDAO {
 	
 	public UserLikesPost findByValue(String[] columns, String[] vals) {
 		UserLikesPost ulp = null;
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				ulp = new UserLikesPost(
@@ -62,6 +65,11 @@ public class UserLikesPostDAO extends AbstractDAO {
 					rs.close();
 				} catch (SQLException e) {}
 			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
 		}
 	}
 	
@@ -71,7 +79,9 @@ public class UserLikesPostDAO extends AbstractDAO {
 	
 	public ArrayList<UserLikesPost> findAllByValue(String[] columns, String[] vals) {
 		ArrayList<UserLikesPost> ulps = new ArrayList<UserLikesPost>();
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				ulps.add(new UserLikesPost(
@@ -86,6 +96,11 @@ public class UserLikesPostDAO extends AbstractDAO {
 			if (rs != null) {
 				try {
 					rs.close();
+				} catch (SQLException e) {}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
 				} catch (SQLException e) {}
 			}
 		}

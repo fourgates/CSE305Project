@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.UserPreferences;
+import com.teamusa.util.ConnectionPair;
 
 public class UserPreferencesDAO extends AbstractDAO {
 	
@@ -45,7 +46,9 @@ public class UserPreferencesDAO extends AbstractDAO {
 	
 	public UserPreferences findByValue(String[] columns, String[] vals) {
 		UserPreferences up = null;
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				up = new UserPreferences(
@@ -62,6 +65,11 @@ public class UserPreferencesDAO extends AbstractDAO {
 					rs.close();
 				} catch (SQLException e) {}
 			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
 		}
 	}
 	
@@ -71,7 +79,9 @@ public class UserPreferencesDAO extends AbstractDAO {
 	
 	public ArrayList<UserPreferences> findAllByValue(String[] columns, String[] vals) {
 		ArrayList<UserPreferences> ups = new ArrayList<UserPreferences>();
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				ups.add(new UserPreferences(
@@ -86,6 +96,11 @@ public class UserPreferencesDAO extends AbstractDAO {
 			if (rs != null) {
 				try {
 					rs.close();
+				} catch (SQLException e) {}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
 				} catch (SQLException e) {}
 			}
 		}

@@ -157,7 +157,7 @@ public class ManagerController extends AbstractController {
 	public int getRevenueByItem(String adColumn, String adVal) {
 		int sum = 0;
 		String[] columns = {adColumn};
-		String[] vals = {adVal};
+		String[] vals = {" = " + adVal};
 		ArrayList<Advertisement> ads = this.advertisementDao.findAllByValue(columns, vals);
 		ArrayList<Purchase> purchases = this.purchaseDao.findAll();
 		
@@ -174,7 +174,7 @@ public class ManagerController extends AbstractController {
 	public int getRevenueByCustomer(int userId) {
 		int sum = 0;
 		String[] columns = {"User"};
-		String[] vals = {userId+""};
+		String[] vals = {" = " + userId};
 		ArrayList<Purchase> purchases = this.purchaseDao.findAllByValue(columns, vals);
 		ArrayList<Advertisement> ads = this.advertisementDao.findAll();
 		
@@ -195,7 +195,7 @@ public class ManagerController extends AbstractController {
 		for (Employee employee : employees) {
 			int sum = 0;
 			String[] columns = {"Employee"};
-			String[] vals = {employee.getSSN()+""};
+			String[] vals = {" = " + employee.getSSN()};
 			ArrayList<Advertisement> empAds = this.advertisementDao.findAllByValue(columns, vals);
 			for (Purchase purchase : purchases) {
 				for (Advertisement ad : empAds) {
@@ -216,7 +216,11 @@ public class ManagerController extends AbstractController {
 		for (User user : users) {
 			int sum = 0;
 			String[] columns = {"User"};
+<<<<<<< HEAD
 			String[] vals = {user.getUserID()+""};
+=======
+			String[] vals = {" = " + user.getUserID()};
+>>>>>>> d8665e7da062191f4bff0feb82ded605de59c74d
 			ArrayList<Purchase> userPurchases = this.purchaseDao.findAllByValue(columns, vals);
 			for (Advertisement ad : ads) {
 				for (Purchase purchase : userPurchases) {
@@ -252,7 +256,11 @@ public class ManagerController extends AbstractController {
 	public ArrayList<Integer> getCustomersByItemPurchased(String itemName) {
 		ArrayList<Integer> customers = new ArrayList<Integer>();
 		String[] columns = {"Item_Name"};
+<<<<<<< HEAD
 		String[] vals = {itemName};
+=======
+		String[] vals = {" = " + itemName};
+>>>>>>> d8665e7da062191f4bff0feb82ded605de59c74d
 		ArrayList<Advertisement> itemAds = this.advertisementDao.findAllByValue(columns, vals);
 		ArrayList<Purchase> purchases = this.purchaseDao.findAll();
 		
@@ -268,7 +276,11 @@ public class ManagerController extends AbstractController {
 	
 	public ArrayList<Advertisement> getAdsByCompany(String company) {
 		String[] columns = {"Company"};
+<<<<<<< HEAD
 		String[] vals = {company};
+=======
+		String[] vals = {" = " + company};
+>>>>>>> d8665e7da062191f4bff0feb82ded605de59c74d
 		return this.advertisementDao.findAllByValue(columns, vals);
 	}
 }
