@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.UserHasAccount;
+import com.teamusa.util.ConnectionPair;
 
 public class UserHasAccountDAO extends AbstractDAO {
 	
@@ -45,7 +46,9 @@ public class UserHasAccountDAO extends AbstractDAO {
 	
 	public UserHasAccount findByValue(String[] columns, String[] vals) {
 		UserHasAccount uha = null;
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				uha = new UserHasAccount(
@@ -62,6 +65,11 @@ public class UserHasAccountDAO extends AbstractDAO {
 					rs.close();
 				} catch (SQLException e) {}
 			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException e) {}
+			}
 		}
 	}
 	
@@ -71,7 +79,9 @@ public class UserHasAccountDAO extends AbstractDAO {
 	
 	public ArrayList<UserHasAccount> findAllByValue(String[] columns, String[] vals) {
 		ArrayList<UserHasAccount> uhas = new ArrayList<UserHasAccount>();
-		ResultSet rs = this.createResultSet(columns, vals);
+		ConnectionPair connPair = this.createResultSet(columns, vals);
+		ResultSet rs = connPair.rs;
+		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				uhas.add(new UserHasAccount(
@@ -86,6 +96,11 @@ public class UserHasAccountDAO extends AbstractDAO {
 			if (rs != null) {
 				try {
 					rs.close();
+				} catch (SQLException e) {}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
 				} catch (SQLException e) {}
 			}
 		}

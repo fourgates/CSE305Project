@@ -7,6 +7,7 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import com.teamusa.util.ConnectionPair;
 import com.teamusa.util.SqlString;
 import com.teamusa.util.SqlUtil;
 
@@ -25,7 +26,7 @@ public abstract class AbstractDAO {
 		return sql;
 	}
 	
-	protected ResultSet createResultSet(String[] columns, String[] vals) {
+	protected ConnectionPair createResultSet(String[] columns, String[] vals) {
 		String condition = "";
 		if (columns != null && vals != null) {
 			condition += " WHERE ";
@@ -52,15 +53,10 @@ public abstract class AbstractDAO {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			ps.close();
-			return rs;
+			ConnectionPair connPair = new ConnectionPair(rs, conn);
+			return connPair;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
-		} finally {
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
 		}
 	}
 	

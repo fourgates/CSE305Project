@@ -107,7 +107,7 @@ public class EmployeeController extends AbstractController
 	
 	public ArrayList<Advertisement> getItemSuggestions(int userId) {
 		String[] columns = {"User"};
-		String[] vals = {userId+""};
+		String[] vals = {" = " + userId};
 		ArrayList<Purchase> userPurchases = this.purchaseDao.findAllByValue(columns, vals);
 		ArrayList<String> preferredTypes = new ArrayList<String>();
 		ArrayList<Advertisement> ads = this.advertisementDao.findAll();
