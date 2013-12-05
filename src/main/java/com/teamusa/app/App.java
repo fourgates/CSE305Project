@@ -45,6 +45,7 @@ public class App
     	ArrayList<Account> accountList = accountDAO.findAll();
     	ArrayList<Manager> managerList = managerDAO.findAll();
     	ArrayList<Advertisement> advertisement = addDAO.findAll();
+        employeeDAO.delete("SSN=111222333");
     	
     	
     	/*
