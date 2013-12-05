@@ -10,7 +10,7 @@ import javax.sql.DataSource;
 import com.teamusa.util.SqlString;
 import com.teamusa.util.SqlUtil;
 
-public class AbstractDAO {
+public abstract class AbstractDAO {
 	
 	protected DataSource dataSource;
 	protected SqlUtil sqlUtil = new SqlUtil();
@@ -35,13 +35,11 @@ public class AbstractDAO {
 				for (int i=0; i<columns.length-1; i++) {
 					for (int j=0; j<vals.length-1; i++) {
 						condition += columns[i];
-						condition += " = ";
 						condition += vals[0];
 						condition += " AND ";
 					}
 				}
 				condition += columns[columns.length-1];
-				condition += " = ";
 				condition += vals[vals.length-1];
 			}
 		}
@@ -66,7 +64,7 @@ public class AbstractDAO {
 		}
 	}
 	
-	protected void update(String column, String val, String condition) {
+	public void update(String column, String val, String condition) {
 		Connection conn = null;
 		try {
 			conn = dataSource.getConnection();
@@ -86,7 +84,7 @@ public class AbstractDAO {
 		}
 	}
 	
-	protected void delete(String condition) {
+	public void delete(String condition) {
 		Connection conn = null;
 		try {
 			conn = dataSource.getConnection();
