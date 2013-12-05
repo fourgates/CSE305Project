@@ -87,9 +87,11 @@ body {
 					<h1></h1>
 					<h2>Advertisement</h2>
 					<table class="table table-striped">
+
 						<tr>
+
 							<th style="width: 100px"><span style="font-size: 10pt">Advertisement
-									id</span></th>
+									ID</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">Employee</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">Type</span></th>
 							<th style="width: 84px"><span style="font-size: 10pt">Date</span></th>
@@ -101,18 +103,6 @@ body {
 									Price</span></th>
 							<th style="width: 100px"><span style="font-size: 10pt">Available
 									Units</span></th>
-
-						</tr>
-						<tr>
-							<td><button class="btn btn-default" type="button">Create</button>
-							</td>
-							<td><button class="btn btn-default" type="button">
-									Cancel</button></td>
-						</tr>
-					</table>
-
-					<table>
-						<tr>
 							<c:forEach items="${AddList}" var="item">
 								<tr>
 									<td>${item.employee}</td>
@@ -127,9 +117,13 @@ body {
 								</tr>
 							</c:forEach>
 						</tr>
-
+						<tr>
+							<td><button class="btn btn-default" type="button">Create</button>
+							</td>
+							<td><button class="btn btn-default" type="button">
+									Cancel</button></td>
+						</tr>
 					</table>
-
 				</div>
 			</div>
 		</div>
