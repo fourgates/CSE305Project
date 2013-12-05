@@ -9,7 +9,10 @@ public class Employee {
 	private Date startDate;
 	private int hourlyRate;
 	private int manager;
-	
+	public Employee()
+	{
+		
+	}
 	public Employee(int SSN, Date startDate, int hourlyRate, int manager) {
 		this.SSN = SSN;
 		this.startDate = startDate;

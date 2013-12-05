@@ -18,6 +18,8 @@ public class App
     		//get the jdbcCustomoerDAO
             //CustomerDAO customerDAO = (CustomerDAO) context.getBean("customerDAO");
             AccountDAO accountDAO = (AccountDAO)context.getBean("accountDAO");
+          
+            
             
             
             //create new customer to test 
