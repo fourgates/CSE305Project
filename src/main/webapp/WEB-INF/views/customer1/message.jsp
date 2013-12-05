@@ -1,6 +1,6 @@
 <%-- 
-    Document   : logout
-    Created on : Dec 5, 2013, 3:07:53 AM
+    Document   : message
+    Created on : Dec 4, 2013, 11:58:24 AM
     Author     : funfun
 --%>
 

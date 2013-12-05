@@ -8,108 +8,109 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=x-windows-950">
-        <title>JSP Page</title>
-        <style>
-            #header {
-                background-color: dodgerblue;
+        <title></title>
+        <meta charset="utf-8">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        
+        <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+        <style type="text/css">
+            body {
+                padding-top: 60px;
+                padding-bottom: 40px;
             }
-            #header ul {
-                list-style-type: none;
-                margin:0;
-                padding:0;
+            .sidebar-nav {
+                padding: 9px 0;
             }
-            #header ul a {
-                color: white;
-            }
-            #header ul a:hover {
-                color: yellow;
-            }
-            #header li{
-                display: inline;
-            }
-            #menu ul {
-                list-style-type: none;
-                margin:0;
-                padding:0;
-            }
-            #outer{
-                width: 700px;
-                height: 600px;
-                background: buttonface;
-                margin: 0 auto;
-                display: block;
-            }
-            #inner{
-                background: buttonface;
-                margin: 50px 50px 500px 50px;
-                padding: 0;
-                display: block;
-            }
-            #TABLE {
-                width: 80%;
+
+            @media (max-width: 980px) {
+                /* Enable use of floated navbar text */
+                .navbar-text.pull-right {
+                    float: none;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                }
             }
         </style>
-        <script language="javascript" type="text/javascript">
-            function Button_onclick() {
-                window.open("mailing_list.html", "_self");
-            }
-        </script>
+        <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+
     </head>
     <body>
-        <div id="container">
-            <div id="header" style="">
-                <div>
-                    <h1 style ="color: white; margin-bottom: 0;">FB+</h1>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="navbar-inner">
+                <div class="container">
+                    <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="brand" href="#">Facebook +</a>
+                    <div class="nav-collapse collapse">
+                        <ul class="nav">
+                            <li class="active"><a href="#">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#contact">Logout</a></li>
+                        </ul>
+                    </div><!--/.nav-collapse -->
                 </div>
-                <div>
-                    <ul>
-                        <li><a href="#Home">Home</a></li>                    
-                        <li><a href="#Logout">Logout</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div id ="menu" style="background-color: lightblue ; height: 400px;width: 200px; float: left;">
-                <ul>                  
-                    <li><a href="record_transaction">Transaction</a></li>
-                    <li><a href="customerInfo">Customer Information</a></li>
-                    <li><a href="advertisement">Advertisement</a></li>
-                </ul>
             </div>
         </div>
-        <div id ="content" style="background-color: white; height: 200px; width: 500px;float: left">
-            <form>
-                <div id="outer">
-                    <div id="inner"> <div> <span style="font-size: 20pt; font-family: Arial">customer Information</span> <br>
-                            <div>  <table border="3" id="TABLE">
-                                    <tr>
-                                        <th style="width: 84px"><span style="font-size: 10pt">SSN</span></th>
-                                        <th style="width: 84px"><span style="font-size: 10pt">User Id</span></th>
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="span3">
+                    <div class="well sidebar-nav">
+                        <ul class="nav nav-list">
+                            <li class="nav-header">Sidebar</li>
+                            <li class="active"><a href="#"></a></li>
+                            <li><a href="record_transaction.html">Transaction</a></li>
+                            <li><a href="customerInfo.html">Customer Information</a></li>
+                            <li><a href="advertisement.html">Advertisement</a></li>
+                        </ul>
+                    </div><!--/.well -->
+                </div><!--/span-->
+                <div class="span9">
+                    <div class="hero-unit">
+                        <h1></h1>
+                        <h2>customer Information</h2>   
+                        <table class="table table-striped">  
+                          <tr>
+                                <th style="width: 84px"><span style="font-size: 10pt">SSN</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">User Id</span></th>
 
 
-                                        <th style="width: 130px"><span style="font-size: 10pt">Account Creation Date</span></th>
+                                <th style="width: 130px"><span style="font-size: 10pt">Account Creation Date</span></th>
 
-                                        <th style="width: 84px"><span style="font-size: 10pt">Rating</span></th>
-                                    </tr>
-
-                                </table>
-                                <table>
-                                    <tr>
-                                        <td><button type="button">Add</button> </td>
-                                        <td><button type = "button"> Edit</button></td>
-                                        <td><button type = "button"> Delete</button></td>
-                                        <td><button type = "button" onclick="return Button_onclick()"> Mailing List</button></td>
-                                    </tr>
-                                </table>
-                            </div>
-                        </div>
-
+                                <th style="width: 84px"><span style="font-size: 10pt">Rating</span></th>
+                            </tr>                 
+                            <tr>
+                                <td><button class="btn btn-default" type="button">Add</button> </td>
+                                <td><button class="btn btn-default" type = "button"> Edit</button></td>
+                                <td><button class="btn btn-default" type = "button"> Delete</button></td>
+                                <td><button class="btn btn-default" type = "button" onclick="return Button_onclick()"> Mailing List</button></td>
+                            </tr>
+                        </table>
                     </div>
-            </form>
+                </div>
+            </div>
 
         </div>
+        <script src="../bootstrap/js/jquery.js"></script>
+        <script src="../bootstrap/js/bootstrap-transition.js"></script>
+        <script src="../bootstrap/js/bootstrap-alert.js"></script>
+        <script src="../bootstrap/js/bootstrap-modal.js"></script>
+        <script src="../bootstrap/js/bootstrap-dropdown.js"></script>
+        <script src="../bootstrap/js/bootstrap-scrollspy.js"></script>
+        <script src="../bootstrap/js/bootstrap-tab.js"></script>
+        <script src="../bootstrap/js/bootstrap-tooltip.js"></script>
+        <script src="../bootstrap/js/bootstrap-popover.js"></script>
+        <script src="../bootstrap/js/bootstrap-button.js"></script>
+        <script src="../bootstrap/js/bootstrap-collapse.js"></script>
+        <script src="../bootstrap/js/bootstrap-carousel.js"></script>
+        <script src="../bootstrap/js/bootstrap-typeahead.js"></script>
 
-    </div>
-
-</body>
+    </body>
 </html>

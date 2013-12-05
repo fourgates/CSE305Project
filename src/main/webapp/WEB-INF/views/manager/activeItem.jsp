@@ -1,6 +1,6 @@
 <%-- 
-    Document   : managerHome
-    Created on : Dec 4, 2013, 11:59:58 AM
+    Document   : active_item
+    Created on : Dec 4, 2013, 12:01:44 PM
     Author     : funfun
 --%>
 
@@ -9,13 +9,14 @@
 <html>
     <head>
         <title></title>
-
+        <!--  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">-->
         <meta charset="utf-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
 
+        <!-- Le styles -->
         <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             body {
@@ -36,7 +37,7 @@
             }
         </style>
         <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-      
+
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -59,7 +60,7 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3">
@@ -80,14 +81,21 @@
                 </div><!--/span-->
                 <div class="span9">
                     <div class="hero-unit">
-                        <h1>Manager Home</h1>
-
+                        <h1></h1>
+                        <h2>The most active items in this site</h2>        
+                        <table class="table table-striped">  
+                            <tr>
+                                <th style="width: 84px"><span style="font-size: 10pt">Item Name</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Number Sold</span></th>
+                           
+                            </tr>                        
+                        </table>
                     </div>
                 </div>
             </div>
 
         </div>
-        
+
         <script src="../bootstrap/js/jquery.js"></script>
         <script src="../bootstrap/js/bootstrap-transition.js"></script>
         <script src="../bootstrap/js/bootstrap-alert.js"></script>

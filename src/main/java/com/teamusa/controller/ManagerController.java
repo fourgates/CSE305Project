@@ -26,22 +26,22 @@ import com.teamusa.model.User;
 @RequestMapping("/manager")
 public class ManagerController extends AbstractController {
 	
-	@RequestMapping("/active_item")
+	@RequestMapping("/activeItem")
 	public String handleActiveItem()
 	{
-		return "/manager/active_item";
+		return "/manager/activeItem";
 	}
 	
-	@RequestMapping("/advertised_items")
+	@RequestMapping("/advertisedItems")
 	public String advertisedItems()
 	{
-		return "/manager/advertised_items";
+		return "/manager/advertisedItems";
 	}
 	
-	@RequestMapping("/customer_by_item")
+	@RequestMapping("/customerByItem")
 	public String customerByItem()
 	{
-		return "/manager/customer_by_item";
+		return "/manager/customerByItem";
 	}
 	
 	@RequestMapping("/employeeInfo")
@@ -50,10 +50,10 @@ public class ManagerController extends AbstractController {
 		return "/manager/employeeInfo";
 	}
 	
-	@RequestMapping("/items_by_company")
+	@RequestMapping("/itemsByCompany")
 	public String itemsByCompany()
 	{
-		return "/manager/items_by_company";
+		return "/manager/itemsByCompany";
 	}
 	
 	@RequestMapping("/managerHome")
@@ -68,10 +68,10 @@ public class ManagerController extends AbstractController {
 		return "/manager/revenue";
 	}
 	
-	@RequestMapping("/sales_report")
+	@RequestMapping("/salesReport")
 	public String salesReport()
 	{
-		return "/manager/sales_report";
+		return "/manager/salesReport";
 	}
 	
 	@RequestMapping("/transactions")

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : managerHome
-    Created on : Dec 4, 2013, 11:59:58 AM
+    Document   : purchase_page
+    Created on : Dec 4, 2013, 11:58:39 AM
     Author     : funfun
 --%>
 
@@ -55,6 +55,10 @@
                             <li><a href="#contact">Contact</a></li>
                             <li><a href="#contact">Logout</a></li>
                         </ul>
+                        <form class="form-search">
+                            <input type="text" class="input-medium search-query">
+                            <button type="submit" class="btn">Search</button>
+                        </form>
                     </div><!--/.nav-collapse-->
                 </div>
             </div>
@@ -65,23 +69,45 @@
                 <div class="span3">
                     <div class="well sidebar-nav">
                         <ul class="nav nav-list">
-                            <li class="nav-header">Sidebar</li>
-                            <li class="active"><a href="#"></a></li>
-                            <li><a href="employeeInfo">Employee Information</a></li>
-                            <li><a href="sales_report">Sales Report</a></li>
-                            <li><a href="advertised_items">Advertised Items</a></li>
-                            <li><a href="transactions">Transactions</a></li>
-                            <li><a href="revenue">Revenue</a></li>
-                            <li><a href="active_item">Most Active Items</a></li>
-                            <li><a href="customer_by_item">Customer</a></li>
-                            <li><a href="items_by_company">Company Items</a></li>
+                            
+                    
+                                     <li><a><img src ="images/logo.jpg" alt ="ad image" height ="300" width="300"/></a></li>
+                 
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->
                 <div class="span9">
                     <div class="hero-unit">
-                        <h1>Manager Home</h1>
-
+                        <h1></h1>
+                        <h2>Purchase page</h2>
+                        <table class="table table-striped">
+                                <tr>
+                                <td>Product Information:</td>
+                            </tr>
+                              <tr>
+                                <td>Item_Name:</td>
+                            </tr>
+                              <tr>
+                                <td>Type:</td>
+                            </tr>
+                              <tr>
+                                <td>Company:</td>
+                            </tr>
+                              <tr>
+                                <td>Unit Price:</td>
+                            </tr>
+                              <tr>
+                                <td>Available Units:</td>
+                            </tr>
+                             <td>Qty:<select>
+                                          <option value="1">1</option>
+                                          <option value="2">2</option>
+                                          <option value="3">3</option>
+                                          <option value="4">4</option>
+                                          <option value="5">5</option>                                                        
+                                      </select></td>
+                                  <td><button class="btn btn-default" type="button" >Purchase</button> </td>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -104,3 +130,4 @@
 
     </body>
 </html>
+

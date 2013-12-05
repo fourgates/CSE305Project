@@ -1,6 +1,6 @@
 <%-- 
-    Document   : managerHome
-    Created on : Dec 4, 2013, 11:59:58 AM
+    Document   : record_transaction
+    Created on : Dec 4, 2013, 12:04:13 PM
     Author     : funfun
 --%>
 
@@ -9,13 +9,13 @@
 <html>
     <head>
         <title></title>
-
         <meta charset="utf-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="">
         <meta name="author" content="">
 
+        
         <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             body {
@@ -36,7 +36,7 @@
             }
         </style>
         <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-      
+
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -55,11 +55,10 @@
                             <li><a href="#contact">Contact</a></li>
                             <li><a href="#contact">Logout</a></li>
                         </ul>
-                    </div><!--/.nav-collapse-->
+                    </div><!--/.nav-collapse -->
                 </div>
             </div>
         </div>
-        
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3">
@@ -67,27 +66,48 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">Sidebar</li>
                             <li class="active"><a href="#"></a></li>
-                            <li><a href="employeeInfo">Employee Information</a></li>
-                            <li><a href="sales_report">Sales Report</a></li>
-                            <li><a href="advertised_items">Advertised Items</a></li>
-                            <li><a href="transactions">Transactions</a></li>
-                            <li><a href="revenue">Revenue</a></li>
-                            <li><a href="active_item">Most Active Items</a></li>
-                            <li><a href="customer_by_item">Customer</a></li>
-                            <li><a href="items_by_company">Company Items</a></li>
+                            <li><a href="record_transaction.html">Transaction</a></li>
+                            <li><a href="customerInfo.html">Customer Information</a></li>
+                            <li><a href="advertisement.html">Advertisement</a></li>
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->
                 <div class="span9">
                     <div class="hero-unit">
-                        <h1>Manager Home</h1>
+                        <h1></h1>
+                        <h2>Record Transaction</h2>   
+                        <table class="table table-striped">  
+                             <tr>
+                                 <td>Transaction ID:</td><td><input class="form-control" name="transaction_id" placeholder="transaction id" type="text"></td>
+                             </tr>
+                             <tr>
+                                 <td>User ID:</td><td><input class="form-control" name="User_Id" placeholder="User ID" type="text"></td>
+                             </tr>
 
+                             <tr>
+                                 <td>Date: </td><td><input class="form-control" name="Date" placeholder="Date" type="text"></td>
+
+                             </tr>
+                             <tr>
+                                 <td>Advertisement: </td><td><input class="form-control" name="Advertisement" placeholder="Advertisement" type="text"> </td>
+                             </tr>
+                             <tr>
+                                 <td> Number of Unit: </td> <td><input class="form-control" name="Number_Of_Unit" placeholder="Number of Unit" type="text"></td>
+                             </tr>
+                             <tr>
+                                 <td> Account: </td><td><input class="form-control" name="Account" placeholder="Account" type="text"></td>
+                             </tr>
+
+                             <tr>
+                                 <td><button class="btn btn-default" type="button">Add a transaction</button> </td>
+                                 <td><button class="btn btn-default" type = "button"> Cancel</button></td>
+                             </tr>                 
+                        </table>
                     </div>
                 </div>
             </div>
 
         </div>
-        
         <script src="../bootstrap/js/jquery.js"></script>
         <script src="../bootstrap/js/bootstrap-transition.js"></script>
         <script src="../bootstrap/js/bootstrap-alert.js"></script>

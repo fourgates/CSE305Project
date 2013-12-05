@@ -1,6 +1,6 @@
 <%-- 
-    Document   : managerHome
-    Created on : Dec 4, 2013, 11:59:58 AM
+    Document   : registrationPage
+    Created on : Dec 5, 2013, 3:08:19 AM
     Author     : funfun
 --%>
 
@@ -36,7 +36,8 @@
             }
         </style>
         <link href="../bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-      
+
+
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -59,35 +60,41 @@
                 </div>
             </div>
         </div>
-        
-        <div class="container-fluid">
-            <div class="row-fluid">
-                <div class="span3">
-                    <div class="well sidebar-nav">
-                        <ul class="nav nav-list">
-                            <li class="nav-header">Sidebar</li>
-                            <li class="active"><a href="#"></a></li>
-                            <li><a href="employeeInfo">Employee Information</a></li>
-                            <li><a href="sales_report">Sales Report</a></li>
-                            <li><a href="advertised_items">Advertised Items</a></li>
-                            <li><a href="transactions">Transactions</a></li>
-                            <li><a href="revenue">Revenue</a></li>
-                            <li><a href="active_item">Most Active Items</a></li>
-                            <li><a href="customer_by_item">Customer</a></li>
-                            <li><a href="items_by_company">Company Items</a></li>
-                        </ul>
-                    </div><!--/.well -->
-                </div><!--/span-->
-                <div class="span9">
-                    <div class="hero-unit">
-                        <h1>Manager Home</h1>
 
+        <div id ="back" class="container-fluid" >
+            <div class="row-fluid">
+
+                <div class="span9" >
+                    <div class="hero-unit">
+                        <h1>Sign Up for Facebook+</h1>
+                        <h2>Sign Up as User, Employee, Manager</h2>
+                        <table>
+                            <tbody>
+                            <label class="radio">
+                                <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                User
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                Employee
+                            </label>
+                            <label class="radio">
+                                <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                Manager
+                            </label>
+                            <tr>
+                                <td><button class="btn btn-default" type="button">Next</button> </td>
+                                <td><button class="btn btn-default" type = "button"> Cancel</button></td>
+                            </tr>
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
 
         </div>
-        
+
         <script src="../bootstrap/js/jquery.js"></script>
         <script src="../bootstrap/js/bootstrap-transition.js"></script>
         <script src="../bootstrap/js/bootstrap-alert.js"></script>
@@ -104,3 +111,4 @@
 
     </body>
 </html>
+

@@ -1,6 +1,6 @@
 <%-- 
-    Document   : managerHome
-    Created on : Dec 4, 2013, 11:59:58 AM
+    Document   : search_result
+    Created on : Dec 4, 2013, 11:57:45 AM
     Author     : funfun
 --%>
 
@@ -55,6 +55,10 @@
                             <li><a href="#contact">Contact</a></li>
                             <li><a href="#contact">Logout</a></li>
                         </ul>
+                        <form class="form-search">
+                            <input type="text" class="input-medium search-query">
+                            <button type="submit" class="btn">Search</button>
+                        </form>
                     </div><!--/.nav-collapse-->
                 </div>
             </div>
@@ -67,21 +71,38 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">Sidebar</li>
                             <li class="active"><a href="#"></a></li>
-                            <li><a href="employeeInfo">Employee Information</a></li>
-                            <li><a href="sales_report">Sales Report</a></li>
-                            <li><a href="advertised_items">Advertised Items</a></li>
-                            <li><a href="transactions">Transactions</a></li>
-                            <li><a href="revenue">Revenue</a></li>
-                            <li><a href="active_item">Most Active Items</a></li>
-                            <li><a href="customer_by_item">Customer</a></li>
-                            <li><a href="items_by_company">Company Items</a></li>
+                            <li><a href="employeeInfo">Circle</a></li>
+                            <li><a href="sales_report">Post</a></li>
+                            <li><a href="advertised_items">Message</a></li>
+                       
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->
                 <div class="span9">
                     <div class="hero-unit">
-                        <h1>Manager Home</h1>
+                        <h1></h1>
+                        <h2>User's info</h2>
+                        <table class="table table-striped">  
+                            <tr>
+                               <th style="width: 84px"><span style="font-size: 10pt">First Name</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Last Name</span></th>                               
+                                <th style="width: 84px"><span style="font-size: 10pt">Rating</span></th>
+                            </tr>                    
+                        
+                        <td><button class="btn btn-default" type="button" >Add to my circle</button> </td>
 
+                        </table>
+                        <br>
+                        <h2>that users' circles</h2>
+                        <table class="table table-striped">  
+                            <tr>
+                               <th style="width: 84px"><span style="font-size: 10pt">Circle ID</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Circle Name</span></th>                               
+                                <th style="width: 84px"><span style="font-size: 10pt">Type</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Owner Of Circle</span></th>
+                            </tr>         
+                             <td><button class="btn btn-default" type="button" >Join circle</button> </td>
+                        </table>
                     </div>
                 </div>
             </div>

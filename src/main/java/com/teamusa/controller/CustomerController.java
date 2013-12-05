@@ -15,10 +15,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/customer")
 public class CustomerController 
 {
-	@RequestMapping("/account_history")
+	@RequestMapping("/accountHistory")
 	public String accountHistory()
 	{
-		return "/customer/account_history";
+		return "/customer/accountHistory";
 	}
 	
 	@RequestMapping("/comment")
@@ -51,22 +51,22 @@ public class CustomerController
 		return "/customer/profile";
 	}
 	
-	@RequestMapping("/purchase_page")
+	@RequestMapping("/purchasePage")
 	public String purchasePage()
 	{
-		return "/customer/purchase_page";
+		return "/customer/purchasePage";
 	}
 	
-	@RequestMapping("/purchase_confirm")
+	@RequestMapping("/purchaseConfirm")
 	public String purchaseConfirm()
 	{
-		return "/customer/purchase_confirm";
+		return "/customer/purchaseConfirm";
 	}
 	
-	@RequestMapping("/search_result")
+	@RequestMapping("/searchResult")
 	public String searchResult()
 	{
-		return "/customer/search_result";
+		return "/customer/searchResult";
 	}
 	
 }

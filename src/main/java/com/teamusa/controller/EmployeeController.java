@@ -36,19 +36,19 @@ public class EmployeeController extends AbstractController
 	@RequestMapping("/mailing_list")
 	public String mailingList()
 	{
-		return "/employee/mailing_list";
+		return "/employee/mailingList";
 	}
 	
-	@RequestMapping("/record_transaction")
+	@RequestMapping("/recordTransaction")
 	public String recordTransaction()
 	{
-		return "/employee/record_transaction";
+		return "/employee/recordTransaction";
 	}
 	
-	@RequestMapping("/suggestion_list")
+	@RequestMapping("/suggestionList")
 	public String suggestionList()
 	{
-		return "/employee/suggestion_list";
+		return "/employee/suggestionList";
 	}
 	
 	public void createAdvertisement(int id, int employee, String type, Date date, String company,
