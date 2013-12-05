@@ -4,9 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.teamusa.dao.AccountDAO;
-import com.teamusa.dao.CustomerDAO;
 import com.teamusa.model.Account;
-import com.teamusa.model.Customer;
 
 //test program 
 public class App 
@@ -20,6 +18,7 @@ public class App
     		//get the jdbcCustomoerDAO
             //CustomerDAO customerDAO = (CustomerDAO) context.getBean("customerDAO");
             AccountDAO accountDAO = (AccountDAO)context.getBean("accountDAO");
+            
             
             //create new customer to test 
             //Customer customer = new Customer(2, "mkyong",28);

@@ -12,7 +12,6 @@ import javax.sql.DataSource;
 
 import com.teamusa.dao.AccountDAO;
 import com.teamusa.model.Account;
-import com.teamusa.model.Customer;
 
 /**
  * @author teamusa
