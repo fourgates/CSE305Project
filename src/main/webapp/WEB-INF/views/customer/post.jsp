@@ -88,19 +88,54 @@
                     <div class="hero-unit">
                         <h1></h1>
                         <h2>Post</h2>
-                        <div class='post-unit'>
-                            <div>
-                                <blockquote>
-                                    <p>facebook?.</p>
-                                </blockquote>
-                            </div>
-                            <div>
-                                <button type='button' class='btn pull-right' id='commentbutton[1]' value='1'>Comment</button>
-                            </div>
-                            <div class='hidden'>
-                                <input type='text' id='inputtext[1]' />
+                        <table class="table table-striped">
+                            <tr>
+                                <th style="width: 84px"><span style="font-size: 10pt">
+                                    </span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt"> Post
+                                        ID</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Date
+                                    </span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">
+                                        Content </span></th>    
+                                <th style="width: 84px"><span style="font-size: 10pt">Comment Count</span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Circle </span></th>
+                                <th style="width: 84px"><span style="font-size: 10pt">Author</span></th>
+                            </tr>
+
+                            <c:forEach items="${postList}" var="item">
+                                <tr>    <td><input type="checkbox"></td>
+
+                                    <td>${item.post_id}</td>
+                                    <td>${item.date}</td>
+                                    <td>${item.content}</td>
+                                    <td>${item.comment_count}</td>
+                                    <td>${item.circle}</td>
+                                    <td>${item.author}</td>
+                                </tr>
+                            </c:forEach>
+
+                        </table>
+                                
+                                
+                        <div class="panel panel-default">
+                            <div class="panel-body" style="background-color: white">
+                                
+                                <button class="btn btn-default" type="button">comment </button>
+
+                                <button class="btn btn-default" type="button">like</button>
+
+                                <button class="btn btn-default" type="button">unlike</button>
+
+                                <button class="btn btn-default" type="button">edit</button>
+
+                                <button class="btn btn-default" type="button"> delete </button><br>
+                                <textarea class="form-control" rows="3"></textarea>
                             </div>
                         </div>
+                                
+
+
                     </div>
                 </div>
             </div>
