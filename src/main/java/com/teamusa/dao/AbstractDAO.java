@@ -10,10 +10,10 @@ import javax.sql.DataSource;
 import com.teamusa.util.SqlString;
 import com.teamusa.util.SqlUtil;
 
-public abstract class AbstractDAO {
+public class AbstractDAO {
 	
-	protected DataSource dataSource;
-	protected SqlUtil sqlUtil = new SqlUtil();
+	public DataSource dataSource;
+	public SqlUtil sqlUtil = new SqlUtil();
 	
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
