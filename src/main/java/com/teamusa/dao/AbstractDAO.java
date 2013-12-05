@@ -52,8 +52,7 @@ public class AbstractDAO {
 			String sql = "SELECT * FROM " + sqlString.name + condition;
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			ps.close();
-			ConnectionPair connPair = new ConnectionPair(rs, conn);
+			ConnectionPair connPair = new ConnectionPair(rs, conn, ps);
 			return connPair;
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
@@ -97,6 +96,24 @@ public class AbstractDAO {
 					conn.close();
 				} catch (SQLException e) {}
 			}
+		}
+	}
+	
+	public void closeConnections(ConnectionPair connPair) {
+		if (connPair.rs != null) {
+			try {
+				connPair.rs.close();
+			} catch (SQLException e) {}
+		}
+		if (connPair.ps != null) {
+			try {
+				connPair.ps.close();
+			} catch (SQLException e) {}
+		}
+		if (connPair.conn != null) {
+			try {
+				connPair.conn.close();
+			} catch (SQLException e) {}
 		}
 	}
 }
