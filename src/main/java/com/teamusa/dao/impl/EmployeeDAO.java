@@ -6,8 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.sql.DataSource;
-
 import com.teamusa.dao.AbstractDAO;
 import com.teamusa.model.Employee;
 import com.teamusa.util.ConnectionPair;
@@ -52,7 +50,6 @@ public class EmployeeDAO extends AbstractDAO {
 		Employee employee = null;
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				employee = new Employee(
@@ -66,16 +63,7 @@ public class EmployeeDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 	
@@ -87,7 +75,6 @@ public class EmployeeDAO extends AbstractDAO {
 		ArrayList<Employee> employees = new ArrayList<Employee>();
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				employees.add(new Employee(
@@ -101,16 +88,7 @@ public class EmployeeDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 }

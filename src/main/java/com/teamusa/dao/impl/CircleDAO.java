@@ -50,7 +50,6 @@ public class CircleDAO extends AbstractDAO {
 		Circle circle = null;
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				circle = new Circle(
@@ -64,16 +63,7 @@ public class CircleDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 	
@@ -85,7 +75,6 @@ public class CircleDAO extends AbstractDAO {
 		ArrayList<Circle> circles = new ArrayList<Circle>();
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				circles.add(new Circle(
@@ -99,16 +88,7 @@ public class CircleDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 }

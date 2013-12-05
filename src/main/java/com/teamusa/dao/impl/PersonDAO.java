@@ -55,7 +55,6 @@ public class PersonDAO extends AbstractDAO {
 		Person person = null;
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				person = new Person(
@@ -74,16 +73,7 @@ public class PersonDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 	
@@ -95,7 +85,6 @@ public class PersonDAO extends AbstractDAO {
 		ArrayList<Person> persons = new ArrayList<Person>();
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				persons.add(new Person(
@@ -114,16 +103,7 @@ public class PersonDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 }

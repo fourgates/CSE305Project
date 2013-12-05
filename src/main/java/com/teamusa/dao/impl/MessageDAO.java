@@ -52,7 +52,6 @@ public class MessageDAO extends AbstractDAO {
 		Message message = null;
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				message = new Message(
@@ -68,16 +67,7 @@ public class MessageDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 	
@@ -89,7 +79,6 @@ public class MessageDAO extends AbstractDAO {
 		ArrayList<Message> messages = new ArrayList<Message>();
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				messages.add(new Message(
@@ -105,16 +94,7 @@ public class MessageDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 }

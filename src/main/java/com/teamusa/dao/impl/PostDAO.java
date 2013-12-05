@@ -52,7 +52,6 @@ public class PostDAO extends AbstractDAO {
 		Post post = null;
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			if (rs.next()) {
 				post = new Post(
@@ -68,16 +67,7 @@ public class PostDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 	
@@ -89,7 +79,6 @@ public class PostDAO extends AbstractDAO {
 		ArrayList<Post> posts = new ArrayList<Post>();
 		ConnectionPair connPair = this.createResultSet(columns, vals);
 		ResultSet rs = connPair.rs;
-		Connection conn = connPair.conn;
 		try {
 			while (rs.next()) {
 				posts.add(new Post(
@@ -105,16 +94,7 @@ public class PostDAO extends AbstractDAO {
 		} catch (SQLException e) {
 			throw new RuntimeException(e);
 		} finally {
-			if (rs != null) {
-				try {
-					rs.close();
-				} catch (SQLException e) {}
-			}
-			if (conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
+			this.closeConnections(connPair);
 		}
 	}
 }
