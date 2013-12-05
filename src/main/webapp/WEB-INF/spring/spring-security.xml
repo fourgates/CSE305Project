@@ -20,10 +20,9 @@
 		   users-by-username-query="
 		      select SSN 
 		      from users where username=?" 
- <!--  -->
-		  <--! --> 
+		      />
  
-		/>
+		
 	   </authentication-provider>
 	</authentication-manager>
  
