@@ -3,28 +3,48 @@ package com.teamusa.controller;
 import java.sql.Date;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.teamusa.dao.impl.AdvertisementDAO;
 import com.teamusa.model.Advertisement;
 import com.teamusa.model.Person;
 import com.teamusa.model.Purchase;
 import com.teamusa.model.User;
 
 @Controller
-@RequestMapping("employee")
+@RequestMapping(value = "employee",method = RequestMethod.GET)
 public class EmployeeController extends AbstractController
 {	
 	private static final Logger logger = LoggerFactory.getLogger(EmployeeController.class);
-	@RequestMapping("/advertisement")
-	public String advertisement()
+	@RequestMapping(value = "/advertisement",method = RequestMethod.GET)
+	public String advertisement(HttpServletRequest request)
 	{
 		ApplicationContext context = 
         		new ClassPathXmlApplicationContext("root-context.xml");
+		
+		//get addvertisement bean
+		AdvertisementDAO addDAO = (AdvertisementDAO)context.getBean("addDAO");
+		
+		//get all adds
+		ArrayList<Advertisement> advertisements = addDAO.findAll();
+		
+		ArrayList<String> al = new ArrayList<String>();
+		al.add("String 1");
+		al.add("String 2");
+		al.add("String 3");
+		
+		request.setAttribute("AddList", advertisements);
+		logger.info("Add Size: "+advertisements.size());
+		System.out.println("Add Size: "+advertisements.size());
+		
 		return "/employee/advertisement";
 	}
 	
