@@ -6,9 +6,15 @@ package com.teamusa.controller;
 import java.sql.Date;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.teamusa.dao.impl.CircleDAO;
 import com.teamusa.model.AddedTo;
 import com.teamusa.model.Circle;
 import com.teamusa.model.Comment;
@@ -25,7 +31,7 @@ import com.teamusa.model.UserLikesPost;
  */
 
 @Controller
-@RequestMapping("/customer")
+@RequestMapping(value = "/customer")
 public class CustomerController extends AbstractController
 {
 	@RequestMapping("/accountHistory")
@@ -40,9 +46,24 @@ public class CustomerController extends AbstractController
 		return "/customer/comment";
 	}
 	
-	@RequestMapping("/circle")
-	public String circle()
+	@RequestMapping(value = "/circle", method = RequestMethod.GET)
+	public String circle(HttpServletRequest request)
 	{
+		ApplicationContext context = 
+        		new ClassPathXmlApplicationContext("root-context.xml");
+		
+		//get bean
+		CircleDAO circleDAO = (CircleDAO)context.getBean("circleDAO");
+		
+		//get list of circles
+		ArrayList<Circle> circleList = circleDAO.findAll();
+		
+		//set bean in view
+		request.setAttribute("circleList", circleList);
+		
+		
+		
+		
 		return "/customer/circle";
 	}
 	

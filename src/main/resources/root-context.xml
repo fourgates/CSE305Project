@@ -19,6 +19,14 @@
 		<property name="dataSource" ref="dataSource" />
 	</bean>
 
+	<bean id="userDAO" class="com.teamusa.dao.impl.UserDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
+	<bean id="circleDAO" class="com.teamusa.dao.impl.CircleDAO">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+
 
 
 

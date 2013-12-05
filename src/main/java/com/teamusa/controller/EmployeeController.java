@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.teamusa.dao.impl.AdvertisementDAO;
+import com.teamusa.dao.impl.UserDAO;
 import com.teamusa.model.Advertisement;
 import com.teamusa.model.Person;
 import com.teamusa.model.Purchase;
@@ -35,12 +36,7 @@ public class EmployeeController extends AbstractController
 		
 		//get all adds
 		ArrayList<Advertisement> advertisements = addDAO.findAll();
-		
-		ArrayList<String> al = new ArrayList<String>();
-		al.add("String 1");
-		al.add("String 2");
-		al.add("String 3");
-		
+
 		request.setAttribute("AddList", advertisements);
 		logger.info("Add Size: "+advertisements.size());
 		System.out.println("Add Size: "+advertisements.size());
@@ -48,9 +44,22 @@ public class EmployeeController extends AbstractController
 		return "/employee/advertisement";
 	}
 	
-	@RequestMapping("/customerInfo")
-	public String customerInfo()
+	@RequestMapping(value = "/customerInfo", method = RequestMethod.GET)
+	public String customerInfo(HttpServletRequest request)
 	{
+		ApplicationContext context = 
+        		new ClassPathXmlApplicationContext("root-context.xml");
+		
+		//get user bean
+		UserDAO userDAO = (UserDAO)context.getBean("userDAO");
+		
+	
+		
+		ArrayList<User> userList = userDAO.findAll();
+		
+		//add bean to model
+		request.setAttribute("userList", userList);
+		
 		return "/employee/customerInfo";
 	}
 	
