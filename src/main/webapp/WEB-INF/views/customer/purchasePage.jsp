@@ -35,8 +35,8 @@
                 }
             }
         </style>
-       <link href="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-responsive.css" />" rel="stylesheet">
-      
+        <link href="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-responsive.css" />" rel="stylesheet">
+
     </head>
     <body>
         <div class="navbar navbar-inverse navbar-fixed-top">
@@ -63,16 +63,16 @@
                 </div>
             </div>
         </div>
-        
+
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span3">
                     <div class="well sidebar-nav">
                         <ul class="nav nav-list">
-                            
-                    
-                                     <li><a><img src ="images/logo.jpg" alt ="ad image" height ="300" width="300"/></a></li>
-                 
+
+
+                            <li><a><img src ="images/logo.jpg" alt ="ad image" height ="300" width="300"/></a></li>
+
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->
@@ -81,54 +81,68 @@
                         <h1></h1>
                         <h2>Purchase page</h2>
                         <table class="table table-striped">
-                                <tr>
+                            <tr>
                                 <td>Product Information:</td>
                             </tr>
-                              <tr>
+                            <tr>
                                 <td>Item_Name:</td>
                             </tr>
-                              <tr>
+                            <tr>
                                 <td>Type:</td>
                             </tr>
-                              <tr>
+                            <tr>
                                 <td>Company:</td>
                             </tr>
-                              <tr>
+                            <tr>
                                 <td>Unit Price:</td>
                             </tr>
-                              <tr>
+                            <tr>
                                 <td>Available Units:</td>
                             </tr>
-                             <td>Qty:<select>
-                                          <option value="1">1</option>
-                                          <option value="2">2</option>
-                                          <option value="3">3</option>
-                                          <option value="4">4</option>
-                                          <option value="5">5</option>                                                        
-                                      </select></td>
-                                  <td><button class="btn btn-default" type="button" >Purchase</button> </td>
+                            <td>Qty:<select>
+                                    <option value="1">1</option>
+
+                                </select></td>
+                            <td><button class="btn btn-default" type="button" >Purchase</button> </td>
                         </table>
                     </div>
+                    <div class="row-fluid">
+                        <div class="span4">
+                            <h2>Item1</h2>
+                            <p></p>
+                            <p><a href="#"></a></p>
+                        </div><!--/span-->
+                        <div class="span4">
+                            <h2>Item2</h2>
+                            <p></p>
+                            <p><a href="#"></a></p>
+                        </div><!--/span-->
+                         <div class="span4">
+                            <h2>Item3</h2>
+                            <p></p>
+                            <p><a href="#"></a></p>
+                        </div><!--/span-->
+                    </div>
+
                 </div>
+
             </div>
 
-        </div>
-        
-        <script src="src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/jquery.js"></script>
-        <!-- <c:url value="/resources/mytheme/bootstrap/js/jquery.js" /> -->
-        <script type="text/javascript" src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-transition.js"></script>
-       	<script type="text/javascript" src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-alert.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-alert.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-modal.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-dropdown.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-scrollspy.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-tab.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-tooltip.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-popover.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-button.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-collapse.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-carousel.js"></script>
-        <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-typeahead.js"></script>
+            <script src="src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/jquery.js"></script>
+            <!-- <c:url value="/resources/mytheme/bootstrap/js/jquery.js" /> -->
+            <script type="text/javascript" src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-transition.js"></script>
+            <script type="text/javascript" src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-alert.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-alert.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-modal.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-dropdown.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-scrollspy.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-tab.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-tooltip.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-popover.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-button.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-collapse.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-carousel.js"></script>
+            <script src="${pageContext.request.contextPath}/resources/mytheme/bootstrap/js/bootstrap-typeahead.js"></script>
 
     </body>
 </html>

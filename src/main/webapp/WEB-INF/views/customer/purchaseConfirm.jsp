@@ -94,12 +94,27 @@
                             </tr>
                               <tr>
                                 <td>User:</td>
-                            </tr>
-                           
-                            
+                            </tr>                        
                          
                                   <td><button class="btn btn-default" type="button" >Confirm</button> </td>
                         </table>
+                    </div>
+                     <div class="row-fluid">
+                        <div class="span4">
+                            <h2>Item1</h2>
+                            <p></p>
+                            <p><a href="#"></a></p>
+                        </div><!--/span-->
+                        <div class="span4">
+                            <h2>Item2</h2>
+                            <p></p>
+                            <p><a href="#"></a></p>
+                        </div><!--/span-->
+                         <div class="span4">
+                            <h2>Item3</h2>
+                            <p></p>
+                            <p><a href="#"></a></p>
+                        </div><!--/span-->
                     </div>
                 </div>
             </div>
