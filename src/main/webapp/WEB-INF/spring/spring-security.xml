@@ -20,11 +20,8 @@
 		   users-by-username-query="
 		      select SSN 
 		      from users where username=?" 
- 
-		   authorities-by-username-query="
-		      select u.username, ur.authority 
-		      from users u, user_roles ur 
-		      where u.user_id = ur.user_id and u.username =?  " 
+ <!--  -->
+		  <--! --> 
  
 		/>
 	   </authentication-provider>

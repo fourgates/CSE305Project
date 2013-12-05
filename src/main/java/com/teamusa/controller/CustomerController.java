@@ -43,6 +43,9 @@ public class CustomerController extends AbstractController {
 	@RequestMapping(value = "/accountHistory", method = RequestMethod.GET)
 	public String accountHistory(HttpServletRequest request) {
 		
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//String name = auth.getName(); //get logged in usernam	
+		//System.out.println(name);
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"root-context.xml");
 
@@ -67,7 +70,8 @@ public class CustomerController extends AbstractController {
 	public String circle(HttpServletRequest request) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"root-context.xml");
-
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//String name = auth.getName(); //get logged in usernam	
 		// get bean
 		CircleDAO circleDAO = (CircleDAO) context.getBean("circleDAO");
 
@@ -84,7 +88,8 @@ public class CustomerController extends AbstractController {
 	public String message(HttpServletRequest request) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"root-context.xml");
-
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//String name = auth.getName(); //get logged in usernam	
 		// get bean
 		MessageDAO messageDAO = (MessageDAO) context.getBean("messageDAO");
 
@@ -106,7 +111,8 @@ public class CustomerController extends AbstractController {
 	public String profile(HttpServletRequest request) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"root-context.xml");
-
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//String name = auth.getName(); //get logged in usernam	
 		// get bean
 		PostDAO postDAO = (PostDAO) context.getBean("postDAO");
 
@@ -122,7 +128,8 @@ public class CustomerController extends AbstractController {
 	public String purchasePage(HttpServletRequest request) {
 		ApplicationContext context = new ClassPathXmlApplicationContext(
 				"root-context.xml");
-
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//String name = auth.getName(); //get logged in usernam	
 		// get bean
 		PurchaseDAO purchaseDAO = (PurchaseDAO) context.getBean("purchaseDAO");
 

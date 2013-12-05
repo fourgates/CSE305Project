@@ -52,13 +52,14 @@ public class EmployeeController extends AbstractController
 		ApplicationContext context = 
         		new ClassPathXmlApplicationContext("root-context.xml");
 		
-		Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-		String name = auth.getName(); //get logged in username
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//String name = auth.getName(); //get logged in username
 		
 		//get user bean
 		UserDAO userDAO = (UserDAO)context.getBean("userDAO");
 		
 		ArrayList<User> userList = userDAO.findAll();
+		//userDAO.f
 		
 		//add bean to model
 		request.setAttribute("userList", userList);
@@ -69,6 +70,8 @@ public class EmployeeController extends AbstractController
 	@RequestMapping("/employeeHome")
 	public String employeeHome()
 	{
+		//Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+		//String name = auth.getName(); //get logged in username
 		return "/employee/employeeHome";
 	}
 	
