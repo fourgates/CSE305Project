@@ -66,9 +66,9 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">Sidebar</li>
                             <li class="active"><a href="#"></a></li>
-                            <li><a href="record_transaction.html">Transaction</a></li>
-                            <li><a href="customerInfo.html">Customer Information</a></li>
-                            <li><a href="advertisement.html">Advertisement</a></li>
+                            <li><a href="recordTransaction">Transaction</a></li>
+                            <li><a href="customerInfo">Customer Information</a></li>
+                            <li><a href="advertisement">Advertisement</a></li>
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->
