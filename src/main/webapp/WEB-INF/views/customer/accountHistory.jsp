@@ -73,32 +73,14 @@
                             <li class="nav-header">Sidebar</li>
                             <li class="active"><a href="#"></a></li>
 
-                           <li><a href="employeeInfo">Circle</a></li>
+                           <li><a href="circle">Circle</a></li>
 
-                            <li><a href="sales_report">Post</a></li>
-                            <li><a href="advertised_items">Message</a></li>
+                            <li><a href="post">Post</a></li>
+                            <li><a href="message">Message</a></li>
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->
-                <div class="span9">
-                    <div class="hero-unit">
-                        <h1></h1>
-                        <h2>Account History</h2>   
-
-                         Select an account: 
-
-                        <select>
-                            <option value="company_name">account </option>
-                        </select>
-                        <table class="table table-striped">  
-                            <tr>
-
-                            <li><a href="employeeInfo">Circle</a></li>
-                            <li><a href="sales_report">Post</a></li>
-                            <li><a href="advertised_items">Message</a></li>
-                        </ul>
-                    </div><!--/.well -->
-                </div><!--/span-->
+               
                 <div class="span9">
                     <div class="hero-unit">
                         <h1></h1>

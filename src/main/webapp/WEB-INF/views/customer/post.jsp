@@ -16,7 +16,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
 
-        <link href="../bootstrap/css/bootstrap.css" rel="stylesheet">
+        <link href="${pageContext.request.contextPath}/resources/mytheme/bootstrap/css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             .post-unit {
                 background-color: lightblue;
@@ -77,9 +77,9 @@
                         <ul class="nav nav-list">
                             <li class="nav-header">Sidebar</li>
                             <li class="active"><a href="#"></a></li>
-                            <li><a href="employeeInfo">Circle</a></li>
-                            <li><a href="sales_report">Post</a></li>
-                            <li><a href="advertised_items">Message</a></li>
+                             <li><a href="circle">Circle</a></li>
+                            <li><a href="post">Post</a></li>
+                            <li><a href="message">Message</a></li>
                        
                         </ul>
                     </div><!--/.well -->

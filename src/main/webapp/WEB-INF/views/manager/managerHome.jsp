@@ -68,13 +68,13 @@
                             <li class="nav-header">Sidebar</li>
                             <li class="active"><a href="#"></a></li>
                             <li><a href="employeeInfo">Employee Information</a></li>
-                            <li><a href="sales_report">Sales Report</a></li>
-                            <li><a href="advertised_items">Advertised Items</a></li>
+                            <li><a href="salesReport">Sales Report</a></li>
+                            <li><a href="advertisedItems">Advertised Items</a></li>
                             <li><a href="transactions">Transactions</a></li>
                             <li><a href="revenue">Revenue</a></li>
-                            <li><a href="active_item">Most Active Items</a></li>
-                            <li><a href="customer_by_item">Customer</a></li>
-                            <li><a href="items_by_company">Company Items</a></li>
+                            <li><a href="activeItem">Most Active Items</a></li>
+                            <li><a href="customerByItem">Customer</a></li>
+                            <li><a href="itemsByCompany">Company Items</a></li>
                         </ul>
                     </div><!--/.well -->
                 </div><!--/span-->
